@@ -19,14 +19,14 @@
 
         <header class="w3-padding-32 w3-center w3-border-bottom w3-margin-bottom">
 
-            <h1 class="w3-text-red">CodeAdam Website Admin</h1>
+            <h1 class="w3-text-red">BrickMMO Website Admin</h1>
 
             @if (Auth::check())
                 <div class="w3-text-gray w3-small">
                     You are logged in as {{auth()->user()->first}} {{auth()->user()->last}}
                 <div>
                 <i class="fas fa-tachometer-alt"></i> <a href="/dashboard">Dashboard</a> | 
-                <i class="fas fa-search"></i> <a href="https://codeadam.ca/">Website Home Page</a> | 
+                <i class="fas fa-search"></i> <a href="https://brickmmo.com/">Website Home Page</a> | 
                 <i class="fas fa-sign-out-alt"></i> <a href="/logout">Log Out</a> 
             @endif
 

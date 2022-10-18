@@ -39,9 +39,10 @@ class ConsoleController extends Controller
     public function dashboard()
     {
         $links = [
-            ['icon' => 'fas fa-file', 'text' => 'Sample Assignments', 'route' => '/assignments/list'],
-            ['icon' => 'fas fa-columns', 'text' => 'Topics', 'route' => '/topics/list'],
-            ['icon' => 'fas fa-newspaper', 'text' => 'Articles', 'route' => '/articles/list'],
+            ['icon' => 'fas fa-map', 'text' => 'Maps', 'route' => '/maps/list'],
+            ['icon' => 'fas fa-building', 'text' => 'Buildings', 'route' => '/buildings/list'],
+            ['icon' => 'fas fa-brain', 'text' => 'LEGO™ Brains', 'route' => '/brains/list'],
+            
             ['icon' => 'fas fa-chalkboard', 'text' => 'Pages', 'route' => '/pages/list'],
             ['icon' => 'fas fa-quote-left', 'text' => 'Evaluations', 'route' => '/evaluations/list'],
             ['icon' => 'fas fa-tools', 'text' => 'Tools', 'route' => '/tools/list'],
