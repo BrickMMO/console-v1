@@ -16,6 +16,8 @@
 
         @include ('layout.forms.text', ['name' => 'subtitle'])
 
+        @include ('layout.forms.text', ['name' => 'color'])
+
         @include ('layout.forms.text', ['name' => 'set_num'])
 
         @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table'])

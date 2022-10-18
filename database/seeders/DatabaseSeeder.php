@@ -83,31 +83,37 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Flourish & Blotts & Florean Fortescue\'s Ice Cream Parlor',
                 'set_num' => '75798',
+                'color' => '6D8E6E',
                 'squares' => array(1,2),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Weasley\'s Wizard Wheezes & Knockturn Alley',
                 'set_num' => '75798',
+                'color' => 'E9C9FF',
                 'squares' => array(3,4),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Quality Quidditch™ Supplies & The Daily Prophet™',
                 'set_num' => '75798',
+                'color' => '6D8E6E',
                 'squares' => array(7,8),
             ),array(
                 'title' => 'Dagobah™ Jedi™ Training Diorama',
                 'subtitle' => '',
                 'set_num' => '75330',
+                'color' => 'D7AE71',
                 'squares' => array(9,10),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Ollivanders™ Wandshop & Scribbulus',
                 'set_num' => '75798',
+                'color' => '003E62',
                 'squares' => array(11,12),
             ),array(
                 'title' => 'Boutique Hotel',
                 'subtitle' => '',
                 'set_num' => '10297',
+                'color' => 'BE6A33',
                 'squares' => array(45,46,57,58),
             ),
         );

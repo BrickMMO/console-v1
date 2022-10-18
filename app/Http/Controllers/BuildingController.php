@@ -37,6 +37,7 @@ class BuildingController extends Controller
             'title' => 'required',
             'subtitle' => 'nullable',
             'set_num' => 'nullable',
+            'color' => 'nullable',
             'map_id' => 'required',
         ]);
 
@@ -65,6 +66,7 @@ class BuildingController extends Controller
             'title' => 'required',
             'subtitle' => 'nullable',
             'set_num' => 'nullable',
+            'color' => 'nullable',
             'map_id' => 'required',
         ]);
 
