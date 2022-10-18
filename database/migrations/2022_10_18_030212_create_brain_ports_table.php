@@ -19,7 +19,7 @@ class CreateBrainPortsTable extends Migration
             $table->id();
             $table->string('title')->default('');
             $table->enum('function', ['Input','Output','Input/Output'])->default('Input');
-            $table->foreignIdFor(BrainType::class)->nullable();
+            $table->foreignIdFor(BrainType::class);
         });
     }
 

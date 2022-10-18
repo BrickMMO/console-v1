@@ -22,10 +22,10 @@ class CreateMapSquaresTable extends Migration
             $table->id();
             $table->integer('x');
             $table->integer('y');
-            $table->string('directions')->default('');
+            $table->string('directions')->nullable();
             $table->foreignIdFor(Building::class)->nullable();
-            $table->foreignIdFor(Map::class)->nullable();
-            $table->foreignIdFor(MapType::class)->nullable();
+            $table->foreignIdFor(Map::class);
+            $table->foreignIdFor(MapType::class);
         });
     }
 

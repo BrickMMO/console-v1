@@ -25,7 +25,7 @@ class Building extends Model
 
     public function map()
     {
-        return $this->belongsToo(Map::class);
+        return $this->belongsTo(Map::class);
     }
 
 }

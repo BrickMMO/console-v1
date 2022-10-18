@@ -18,10 +18,10 @@ class CreateBuildingsTable extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default('');
-            $table->string('subtitle')->default('');
-            $table->string('set_num')->default('');
-            $table->foreignIdFor(Map::class)->nullable();
+            $table->string('title');
+            $table->string('subtitle')->nullable();
+            $table->string('set_num')->nullable();
+            $table->foreignIdFor(Map::class);
             $table->timestamps();
         });
     }

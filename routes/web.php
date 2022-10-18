@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
 
@@ -11,7 +12,6 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SocialController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ToolTypeController;
@@ -49,18 +49,18 @@ Route::post('/maps/add', [MapController::class, 'add'])->middleware('auth');
 Route::get('/maps/edit/{map:id}', [MapController::class, 'editForm'])->where('map', '[0-9]+')->middleware('auth');
 Route::post('/maps/edit/{map:id}', [MapController::class, 'edit'])->where('map', '[0-9]+')->middleware('auth');
 Route::get('/maps/delete/{map:id}', [MapController::class, 'delete'])->where('map', '[0-9]+')->middleware('auth');
-Route::get('/maps/delete/image/{map:id}', [MapController::class, 'deleteImage'])->where('map', '[0-9]+')->middleware('auth');
+
+Route::get('/buildings/list', [BuildingController::class, 'list'])->middleware('auth');
+Route::get('/buildings/add', [BuildingController::class, 'addForm'])->middleware('auth');
+Route::post('/buildings/add', [BuildingController::class, 'add'])->middleware('auth');
+Route::get('/buildings/edit/{building:id}', [BuildingController::class, 'editForm'])->where('building', '[0-9]+')->middleware('auth');
+Route::post('/buildings/edit/{building:id}', [BuildingController::class, 'edit'])->where('building', '[0-9]+')->middleware('auth');
+Route::get('/buildings/delete/{building:id}', [BuildingController::class, 'delete'])->where('building', '[0-9]+')->middleware('auth');
+Route::get('/buildings/image/{building:id}', [BuildingController::class, 'imageForm'])->where('building', '[0-9]+')->middleware('auth');
+Route::post('/buildings/image/{building:id}', [BuildingController::class, 'image'])->where('building', '[0-9]+')->middleware('auth');
 
 
 
-Route::get('/projects/list', [ProjectController::class, 'list'])->middleware('auth');
-Route::get('/projects/add', [ProjectController::class, 'addForm'])->middleware('auth');
-Route::post('/projects/add', [ProjectController::class, 'add'])->middleware('auth');
-Route::get('/projects/edit/{project:id}', [ProjectController::class, 'editForm'])->where('project', '[0-9]+')->middleware('auth');
-Route::post('/projects/edit/{project:id}', [ProjectController::class, 'edit'])->where('project', '[0-9]+')->middleware('auth');
-Route::get('/projects/delete/{project:id}', [ProjectController::class, 'delete'])->where('project', '[0-9]+')->middleware('auth');
-Route::get('/projects/image/{project:id}', [ProjectController::class, 'imageForm'])->where('project', '[0-9]+')->middleware('auth');
-Route::post('/projects/image/{project:id}', [ProjectController::class, 'image'])->where('project', '[0-9]+')->middleware('auth');
 
 
 Route::get('/evaluations/list', [EvaluationController::class, 'list'])->middleware('auth');
@@ -69,7 +69,6 @@ Route::post('/evaluations/add', [EvaluationController::class, 'add'])->middlewar
 Route::get('/evaluations/edit/{evaluation:id}', [EvaluationController::class, 'editForm'])->where('evaluation', '[0-9]+')->middleware('auth');
 Route::post('/evaluations/edit/{evaluation:id}', [EvaluationController::class, 'edit'])->where('evaluation', '[0-9]+')->middleware('auth');
 Route::get('/evaluations/delete/{evaluation:id}', [EvaluationController::class, 'delete'])->where('evaluation', '[0-9]+')->middleware('auth');
-
 
 Route::get('/memes/tags/list', [TagController::class, 'list'])->middleware('auth');
 Route::get('/memes/tags/add', [TagController::class, 'addForm'])->middleware('auth');

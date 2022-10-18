@@ -15,9 +15,9 @@ class CreateBrainTypesTable extends Migration
     {
         Schema::create('brain_types', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default('');
-            $table->string('set_num')->default('');
-            $table->string('part_num')->default('');
+            $table->string('title');
+            $table->string('set_num')->nullable();
+            $table->string('part_num')->nullable();
         });
     }
 
