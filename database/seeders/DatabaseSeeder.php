@@ -76,7 +76,15 @@ class DatabaseSeeder extends Seeder
             }
         }
 
-        // 
+        // Buildings
+        $buildings = array(
+            array(
+                'title' => 'Diagon Alley',
+                'subtitle' => 'Flourish & Blotts & Florean Fortescue\'s Ice Cream Parlor',
+                'set_num' => '123',
+                'squares' => array(0,1),
+            ),
+        );
 
         // \App\Models\User::factory(10)->create();
 

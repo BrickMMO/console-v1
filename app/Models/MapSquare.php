@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MapSquare extends Model
 {
+
     use HasFactory;
 
     public $timestamps = false;
@@ -26,4 +27,10 @@ class MapSquare extends Model
     {
         return $this->belongsTo(Map::class, 'map_id');
     }
+
+    public function buildings()
+    {
+        return $this->belongsToMany(Buildings::class);
+    }
+    
 }

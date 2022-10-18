@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MapType extends Model
 {
+
     use HasFactory;
 
     public $timestamps = false;
@@ -19,4 +20,5 @@ class MapType extends Model
     {
         return $this->hasMany(MapSquares::class, 'type_id');
     }
+    
 }

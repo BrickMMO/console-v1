@@ -9,6 +9,7 @@ use App\Models\ArticleType;
 
 class Map extends Model
 {
+    
     use HasFactory;
 
     protected $fillable = [
