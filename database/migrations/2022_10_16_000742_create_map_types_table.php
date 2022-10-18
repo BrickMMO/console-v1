@@ -16,7 +16,7 @@ class CreateMapTypesTable extends Migration
         Schema::create('map_types', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->timestamps();
+            $table->string('color');
         });
     }
 

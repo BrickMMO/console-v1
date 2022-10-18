@@ -22,7 +22,6 @@ class CreateMapSquaresTable extends Migration
             $table->integer('y');
             $table->foreignIdFor(Map::class);
             $table->foreignIdFor(MapType::class);
-            $table->timestamps();
         });
     }
 
