@@ -18,7 +18,7 @@ class CreateBrainsTable extends Migration
         Schema::create('brains', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignIdFor(BrainType::class);
+            $table->foreignIdFor(BrainType::class)->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,7 @@ class CreateBrainsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('brains');
     }
 }

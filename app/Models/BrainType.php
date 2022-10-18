@@ -20,5 +20,10 @@ class BrainType extends Model
     {
         return $this->hasMany(Brain::class);
     }
+
+    public function ports()
+    {
+        return $this->hasMany(BrainPort::class);
+    }
     
 }

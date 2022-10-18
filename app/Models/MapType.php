@@ -14,6 +14,7 @@ class MapType extends Model
 
     protected $fillable = [
         'title',
+        'color',
     ];
 
     public function squares()

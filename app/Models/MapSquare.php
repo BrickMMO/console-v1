@@ -15,6 +15,7 @@ class MapSquare extends Model
     protected $fillable = [
         'x',
         'y',
+        'directions',
         'map_id',
     ];
 
@@ -28,9 +29,9 @@ class MapSquare extends Model
         return $this->belongsTo(Map::class, 'map_id');
     }
 
-    public function buildings()
+    public function building()
     {
-        return $this->belongsToMany(Buildings::class, 'building_square');
+        return $this->belongsTo(Building::class);
     }
     
 }

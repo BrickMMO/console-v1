@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use App\Models\Building;
 use App\Models\Map;
 use App\Models\MapType;
 
@@ -21,8 +22,10 @@ class CreateMapSquaresTable extends Migration
             $table->id();
             $table->integer('x');
             $table->integer('y');
-            $table->foreignIdFor(Map::class);
-            $table->foreignIdFor(MapType::class);
+            $table->string('directions')->default('');
+            $table->foreignIdFor(Building::class)->nullable();
+            $table->foreignIdFor(Map::class)->nullable();
+            $table->foreignIdFor(MapType::class)->nullable();
         });
     }
 

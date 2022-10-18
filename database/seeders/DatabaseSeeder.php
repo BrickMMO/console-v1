@@ -2,18 +2,20 @@
 
 namespace Database\Seeders;
 
-use App\Models\Building;
-use App\Models\Map;
-use App\Models\MapSquare;
-use App\Models\MapType;
-use App\Models\User;
-
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\File;
 
+use App\Models\Building;
+use App\Models\Brain;
+use App\Models\BrainPort;
+use App\Models\BrainType;
+use App\Models\Map;
+use App\Models\MapSquare;
+use App\Models\MapType;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -118,13 +120,89 @@ class DatabaseSeeder extends Seeder
             $building->subtitle = $value['subtitle'];
             $building->set_num = $value['set_num'];
             $building->save();
+            $id = $building->id;
 
             foreach($value['squares'] as $key2 => $value2)
             {
-                $building->squares()->attach($value2);
+                $square = MapSquare::find($value2);
+                $square->building_id = $id;
+                $square->save();
             }
             
         }
+
+        // Add brain types
+        $types = array(
+            array(
+                'title' => 'Mindstorms EV3',
+                'set_num' => '31313',
+                'part_num' => '95646',
+                'ports' => array(
+                    'A' => 'Output',
+                    'B' => 'Output',
+                    'C' => 'Output',
+                    'D' => 'Output',
+                    '1' => 'Input',
+                    '2' => 'Input',
+                    '3' => 'Input',
+                    '4' => 'Input',
+                ),
+            ),
+            array(
+                'title' => 'Robot Inventor',
+                'set_num' => '51515',
+                'part_num' => '67718',
+                'ports' => array(
+                    'A' => 'Input/Output',
+                    'B' => 'Input/Output',
+                    'C' => 'Input/Output',
+                    'D' => 'Input/Output',
+                    'E' => 'Input/Output',
+                    'F' => 'Input/Output',
+                ),
+            ),
+            array(
+                'title' => 'SPIKE™ Prime Set',
+                'set_num' => '45678',
+                'part_num' => '53444',
+                'ports' => array(
+                    'A' => 'Input/Output',
+                    'B' => 'Input/Output',
+                    'C' => 'Input/Output',
+                    'D' => 'Input/Output',
+                    'E' => 'Input/Output',
+                    'F' => 'Input/Output',
+                ),
+            ),
+            array(
+                'title' => 'SPIKE™ Essential',
+                'set_num' => '45345',
+                'part_num' => '67351',
+                'ports' => array(
+                    'A' => 'Input/Output',
+                    'B' => 'Input/Output',
+                ),
+            ),
+        );
+
+        foreach($types as $key => $value)
+        {
+            $type = new BrainType();
+            $type->title = $value['title'];
+            $type->set_num = $value['set_num'];
+            $type->part_num = $value['part_num'];
+            $id = $type->save();
+
+            foreach($value['ports'] as $key2 => $value2)
+            {
+                $port = new BrainPort();
+                $port->title = $key2;
+                $port->function = $value2;
+                $port->brain_type_id = $id;
+                $port->save();
+            }
+        }
+
 
     }
    

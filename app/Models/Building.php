@@ -18,7 +18,7 @@ class Building extends Model
 
     public function squares()
     {
-        return $this->belongsToMany(MapSquare::class, 'building_square');
+        return $this->hasMany(MapSquare::class);
     }
 
 }

@@ -16,9 +16,9 @@ class CreateBuildingsTable extends Migration
     {
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('subtitle');
-            $table->string('set_num');
+            $table->string('title')->default('');
+            $table->string('subtitle')->default('');
+            $table->string('set_num')->default('');
             $table->timestamps();
         });
     }

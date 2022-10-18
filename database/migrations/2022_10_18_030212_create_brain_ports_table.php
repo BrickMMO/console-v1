@@ -17,8 +17,9 @@ class CreateBrainPortsTable extends Migration
     {
         Schema::create('brain_ports', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->foreignIdFor(BrainType::class);
+            $table->string('title')->default('');
+            $table->enum('function', ['Input','Output','Input/Output'])->default('Input');
+            $table->foreignIdFor(BrainType::class)->nullable();
         });
     }
 
@@ -29,6 +30,7 @@ class CreateBrainPortsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('brain_ports');
     }
 }
