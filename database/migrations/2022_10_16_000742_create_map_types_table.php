@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMapTypesTable extends Migration
 {
+    
     /**
      * Run the migrations.
      *
@@ -30,4 +31,5 @@ class CreateMapTypesTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('map_types');
     }
+
 }

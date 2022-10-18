@@ -9,6 +9,7 @@ use App\Models\MapSquare;
 
 class CreateBuildingSquareTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -20,7 +21,6 @@ class CreateBuildingSquareTable extends Migration
             $table->id();
             $table->foreignIdFor(Building::class);
             $table->foreignIdFor(MapSquare::class);
-            $table->timestamps();
         });
     }
 
@@ -31,6 +31,8 @@ class CreateBuildingSquareTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('building_square');
     }
+
 }

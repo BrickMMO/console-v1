@@ -5,8 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\ArticleType;
-
 class Map extends Model
 {
     
@@ -21,7 +19,7 @@ class Map extends Model
 
     public function squares()
     {
-        return $this->hasMany(MapSquares::class, 'map_id');
+        return $this->hasMany(MapSquare::class, 'map_id');
     }
 
 }

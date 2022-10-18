@@ -9,6 +9,7 @@ use App\Models\MapType;
 
 class CreateMapSquaresTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -35,4 +36,5 @@ class CreateMapSquaresTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('map_squares');
     }
+    
 }

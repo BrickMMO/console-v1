@@ -18,7 +18,7 @@ class MapType extends Model
 
     public function squares()
     {
-        return $this->hasMany(MapSquares::class, 'type_id');
+        return $this->hasMany(MapSquare::class, 'type_id');
     }
     
 }

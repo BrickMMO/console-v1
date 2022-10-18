@@ -30,7 +30,7 @@ class MapSquare extends Model
 
     public function buildings()
     {
-        return $this->belongsToMany(Buildings::class);
+        return $this->belongsToMany(Buildings::class, 'building_square');
     }
     
 }

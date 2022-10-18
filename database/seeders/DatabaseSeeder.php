@@ -86,6 +86,22 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
+        foreach($buildings as $key => $value)
+        {
+            $building = new Building();
+            $building->title = $value['title'];
+            $building->subtitle = $value['subtitle'];
+            $building->set_num = $value['set_num'];
+            $building->save();
+
+            foreach($value['squares'] as $key2 => $value2)
+            {
+                
+                $building->squares()->attach($value2);
+            }
+            
+        }
+
         // \App\Models\User::factory(10)->create();
 
         // Schema::disableForeignKeyConstraints();

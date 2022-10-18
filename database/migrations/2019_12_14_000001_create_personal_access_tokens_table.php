@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePersonalAccessTokensTable extends Migration
 {
+    
     /**
      * Run the migrations.
      *
@@ -33,4 +34,5 @@ class CreatePersonalAccessTokensTable extends Migration
     {
         Schema::dropIfExists('personal_access_tokens');
     }
+
 }

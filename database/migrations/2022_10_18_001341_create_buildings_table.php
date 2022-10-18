@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateBuildingsTable extends Migration
 {
+    
     /**
      * Run the migrations.
      *
@@ -32,4 +33,5 @@ class CreateBuildingsTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('buildings');
     }
+
 }

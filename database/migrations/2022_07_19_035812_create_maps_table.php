@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMapsTable extends Migration
 {
+    
     /**
      * Run the migrations.
      *
@@ -32,4 +33,5 @@ class CreateMapsTable extends Migration
         Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('maps');
     }
+
 }
