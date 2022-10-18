@@ -20,7 +20,7 @@ class Article extends Model
 
     public function squares()
     {
-        return $this->has(MapSquares::class, 'map_id');
+        return $this->hasMany(MapSquares::class, 'map_id');
     }
 
 }
