@@ -101,7 +101,7 @@ class BuildingController extends Controller
             'image' => 'required|image',
         ]);
 
-        Building::delete($building->image);
+        Storage::delete($building->image);
         
         $path = request()->file('image')->store('buildings');
 
@@ -115,7 +115,7 @@ class BuildingController extends Controller
     public function deleteImage(Building $building)
     {
 
-        Building::delete($building->image);
+        Storage::delete($building->image);
 
         $building->image = "";
         $building->save();

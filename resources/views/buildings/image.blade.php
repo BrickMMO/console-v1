@@ -4,13 +4,13 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Social Asset Image'])
+    @include ('layout.title', ['title' => 'Building Image'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Social Assets' => '/socials/list'], 'title' => 'Social Asset Image: '.$social->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Buldings' => '/buildings/list'], 'title' => 'Building Image: '.$building->title])
 
-    @include ('layout.elements.image', ['image' => $social->image, 'width' => 400, 'id' => $social->id, 'type' => 'socials'])
+    @include ('layout.elements.image', ['image' => $building->image, 'width' => 400, 'id' => $building->id, 'type' => 'buildings'])
 
-    <form method="post" action="/socials/image/{{$social->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data" autocomplete="off">
+    <form method="post" action="/buildings/image/{{$building->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data" autocomplete="off">
 
         @csrf
 
