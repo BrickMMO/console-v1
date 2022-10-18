@@ -44,12 +44,15 @@ class ConsoleController extends Controller
             ['icon' => 'fas fa-brain', 'text' => 'LEGO™ Brains', 'route' => '/brains/list'],
             ['icon' => 'fas fa-lightbulb', 'text' => 'Lights', 'route' => '/lights/list'],
             
-            ['icon'     => 'fas fa-chalkboard', 'text' => 'Pages', 'route' => '/pages/list'],
+            /*
+            ['icon' => 'fas fa-chalkboard', 'text' => 'Pages', 'route' => '/pages/list'],
             ['icon' => 'fas fa-quote-left', 'text' => 'Evaluations', 'route' => '/evaluations/list'],
             ['icon' => 'fas fa-tools', 'text' => 'Tools', 'route' => '/tools/list'],
             ['icon' => 'fas fa-image', 'text' => 'Memes', 'route' => '/memes/list'],
             ['icon' => 'fas fa-share-alt-square', 'text' => 'Social', 'route' => '/socials/list'],
             ['icon' => 'fas fa-graduation-cap', 'text' => 'Courses', 'route' => '/courses/list'],
+            */
+            
             ['icon' => 'fas fa-user', 'text' => 'Users', 'route' => '/users/list', 'colour' => 'red'],
             ['icon' => 'fas fa-sign-out-alt', 'text' => 'Logout', 'route' => '/logout', 'colour' => 'dark-grey'],
         ];

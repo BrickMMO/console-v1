@@ -4,60 +4,62 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Manage Assignments'])
+    @include ('layout.title', ['title' => 'Manage Brains'])
 
-    <div>
-        <div class="w3-twothird">
-            @include ('layout.breadcrumbs', ['title' => 'Manage Assignments'])
-        </div>
-    </div>
+    @include ('layout.breadcrumbs', ['title' => 'Manage Brains'])
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
             <th>Title</th>
+            <th>Set</th>
+            <th>Part</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
-        <?php foreach($assignments as $assignment): ?>
+        <?php foreach($brains as $brain): ?>
             <tr>
                 <td>
-                    {{$assignment->id}}
+                    {{$brain->id}}
                 </td>
                 <td>
-                    @if ($assignment->image)
+                    @if ($brain->image)
                         <div class="w3-center w3-light-grey w3-padding w3-border">
-                            <img src="{{asset('storage/'.$assignment->image)}}" width="50">
+                            <img src="{{asset('storage/'.$brain->image)}}" width="50">
                         </div>
                     @endif
                 </td>
                 <td>
-                    {{$assignment->title}}
+                    {{$brain->title}}
                     <br>
                     <small>
-                        <a href="{{$assignment->url}}">{{$assignment->url}}</a>
-                        <br>
-                        {{date('F jS, Y', strtotime($assignment->created_at))}}
-                        <br>
-                        @if ($assignment->github_id)
-                            <i class="fab fa-github"></i>
-                        @endif    
+                        @if ($brain->subtitle)
+                            {{$brain->subtitle}}
+                            <br>
+                        @endif
+                        Map: {{$brain->map->title}}
                     </small>
                 </td>
                 <td>
-                    <a href="/assignments/image/{{$assignment->id}}">
+                    {{$brain->set_num}}
+                </td>
+                <td>
+                    {{$brain->squares->count()}}
+                </td>
+                <td>
+                    <a href="/brains/image/{{$brain->id}}">
                         <i class="fas fa-camera"></i> 
                     </a>
                 </td>
                 <td>
-                    <a href="/assignments/edit/{{$assignment->id}}">
+                    <a href="/brains/edit/{{$brain->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/assignments/delete/{{$assignment->id}}">
+                    <a href="/brains/delete/{{$brain->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>
@@ -65,8 +67,8 @@
         <?php endforeach; ?>
     </table>
 
-    @include ('layout.forms.button', ['label' => 'Add Assignment', 'href' => '/assignments/add'])
-    
+    @include ('layout.forms.button', ['label' => 'Add Brain', 'href' => '/brains/add'])
+
 </section>
 
 @endsection

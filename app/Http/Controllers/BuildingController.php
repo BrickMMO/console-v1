@@ -25,7 +25,7 @@ class BuildingController extends Controller
     {
 
         return view('buildings.add', [
-            'maps' => Map::all()
+            'maps' => Map::all(),
         ]);
 
     }

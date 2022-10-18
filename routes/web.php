@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrainController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
@@ -58,6 +59,14 @@ Route::post('/buildings/edit/{building:id}', [BuildingController::class, 'edit']
 Route::get('/buildings/delete/{building:id}', [BuildingController::class, 'delete'])->where('building', '[0-9]+')->middleware('auth');
 Route::get('/buildings/image/{building:id}', [BuildingController::class, 'imageForm'])->where('building', '[0-9]+')->middleware('auth');
 Route::post('/buildings/image/{building:id}', [BuildingController::class, 'image'])->where('building', '[0-9]+')->middleware('auth');
+
+Route::get('/brains/list', [BrainController::class, 'list'])->middleware('auth');
+Route::get('/brains/add', [BrainController::class, 'addForm'])->middleware('auth');
+Route::post('/brains/add', [BrainController::class, 'add'])->middleware('auth');
+Route::get('/brains/edit/{brain:id}', [BrainController::class, 'editForm'])->where('brain', '[0-9]+')->middleware('auth');
+Route::post('/brains/edit/{brain:id}', [BrainController::class, 'edit'])->where('brain', '[0-9]+')->middleware('auth');
+Route::get('/brains/delete/{brain:id}', [BrainController::class, 'delete'])->where('brain', '[0-9]+')->middleware('auth');
+
 
 
 
