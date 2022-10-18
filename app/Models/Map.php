@@ -22,4 +22,14 @@ class Map extends Model
         return $this->hasMany(MapSquare::class, 'map_id');
     }
 
+    public function buildings()
+    {
+        return $this->hasMany(Building::class, 'map_id');
+    }
+
+    public function brains()
+    {
+        return $this->hasMany(Brain::class, 'map_id');
+    }
+
 }

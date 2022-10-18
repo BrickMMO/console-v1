@@ -19,6 +19,9 @@
             <th class="ca-col-icon"></th>
             <th>Title</th>
             <th>Dimensions</th>
+            <th>Buildings</th>
+            <th>Brains</th>
+            <th>Squares</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
@@ -32,6 +35,15 @@
                 </td>
                 <td>
                     {{$map->width}} x {{$map->height}}
+                </td>
+                <td>
+                    {{$map->buildings()->count()}}
+                </td>
+                <td>
+                    {{$map->brains()->count()}}
+                </td>
+                <td>
+                    {{$map->squares()->count()}}
                 </td>
                 <td>
                     <a href="/maps/edit/{{$map->id}}">

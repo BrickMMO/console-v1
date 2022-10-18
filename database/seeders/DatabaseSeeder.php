@@ -66,7 +66,6 @@ class DatabaseSeeder extends Seeder
             array(1,1,2,2,1,1,2,2,2,2,1,1),
             array(1,1,1,1,1,1,1,1,1,1,1,1),
             array(1,1,1,1,1,1,1,1,1,1,1,1),
-            array(2,2,2,2,2,2,2,2,2,2,2,2),
         );
 
         foreach($squares as $key => $value)
