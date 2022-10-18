@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 use App\Models\BrainType;
+use App\Models\Map;
 
 class CreateBrainsTable extends Migration
 {
@@ -19,6 +20,7 @@ class CreateBrainsTable extends Migration
             $table->id();
             $table->string('title');
             $table->foreignIdFor(BrainType::class)->nullable();
+            $table->foreignIdFor(Map::class)->nullable();
             $table->timestamps();
         });
     }

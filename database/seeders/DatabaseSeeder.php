@@ -119,6 +119,7 @@ class DatabaseSeeder extends Seeder
             $building->title = $value['title'];
             $building->subtitle = $value['subtitle'];
             $building->set_num = $value['set_num'];
+            $building->map_id = 1;
             $building->save();
             $id = $building->id;
 

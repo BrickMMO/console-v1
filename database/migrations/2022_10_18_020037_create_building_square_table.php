@@ -4,11 +4,12 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\Map;
+use App\Models\Building;
+use App\Models\MapSquare;
 
-class CreateBuildingsTable extends Migration
+class CreateBuildingSquareTable extends Migration
 {
-    
+
     /**
      * Run the migrations.
      *
@@ -16,13 +17,10 @@ class CreateBuildingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('buildings', function (Blueprint $table) {
+        Schema::create('building_square', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->default('');
-            $table->string('subtitle')->default('');
-            $table->string('set_num')->default('');
-            $table->foreignIdFor(Map::class)->nullable();
-            $table->timestamps();
+            $table->foreignIdFor(Building::class);
+            $table->foreignIdFor(MapSquare::class);
         });
     }
 
@@ -34,7 +32,7 @@ class CreateBuildingsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('buildings');
+        Schema::dropIfExists('building_square');
     }
 
 }
