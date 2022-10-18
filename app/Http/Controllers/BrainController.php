@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 use App\Models\Brain;
+use App\Models\BrainType;
 use App\Models\Building;
 use App\Models\Map;
 
@@ -41,8 +42,7 @@ class BrainController extends Controller
             'brain_type_id' => 'required',
         ]);
 
-        $brain = new Brain();
-        $brain->create($attributes);
+        Brain::create($attributes);
 
         return redirect('/brains/list')
             ->with('message', 'Brain has been added!');
@@ -79,7 +79,7 @@ class BrainController extends Controller
     public function delete(Brain $brain)
     {
         
-        Brain::delete($brain->image);
+        Storage::delete($brain->image);
         
         $brain->delete();
 

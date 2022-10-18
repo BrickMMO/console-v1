@@ -12,6 +12,7 @@
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
+            <th class="ca-col-image"></th>
             <th>Title</th>
             <th>Set</th>
             <th>Squares</th>
@@ -23,6 +24,11 @@
             <tr>
                 <td>
                     {{$building->id}}
+                </td>
+                <td>
+                    <div class="w3-center w3-light-grey w3-padding w3-border">
+                        <div style="width:50; height: 50px; background-color:#{{$building->color}}"></div>
+                    </div>
                 </td>
                 <td>
                     @if ($building->image)

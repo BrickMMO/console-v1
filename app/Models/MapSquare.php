@@ -16,7 +16,9 @@ class MapSquare extends Model
         'x',
         'y',
         'directions',
+        'building_id',
         'map_id',
+        'map_type_id',
     ];
 
     public function type()

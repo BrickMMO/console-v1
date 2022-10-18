@@ -12,12 +12,19 @@ class Brain extends Model
 
     protected $fillable = [
         'title',
+        'map_id',
+        'brain_type_id',
         'published_at',
     ];
 
-    public function type()
+    public function brainType()
     {
         return $this->belongsTo(BrainType::class);
+    }
+
+    public function map()
+    {
+        return $this->belongsTo(Map::class);
     }
 
 }

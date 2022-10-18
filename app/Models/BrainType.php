@@ -14,6 +14,7 @@ class BrainType extends Model
 
     protected $fillable = [
         'title',
+        'image',
     ];
 
     public function brains()

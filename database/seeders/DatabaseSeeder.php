@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
         // Add first map
         $map = new Map();
-        $map->title = "Mock 1";
+        $map->title = "LEGO City - Version 1";
         $map->width = 12;
         $map->height = 9;
         $map->save();
@@ -124,6 +124,7 @@ class DatabaseSeeder extends Seeder
             $building->title = $value['title'];
             $building->subtitle = $value['subtitle'];
             $building->set_num = $value['set_num'];
+            $building->color = $value['color'];
             $building->map_id = 1;
             $building->save();
             $id = $building->id;

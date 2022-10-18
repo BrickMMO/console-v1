@@ -14,6 +14,8 @@ class BrainPort extends Model
 
     protected $fillable = [
         'title',
+        'function',
+        'brain_type_id',
     ];
 
     public function type()

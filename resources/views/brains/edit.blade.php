@@ -4,25 +4,21 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Edit Building'])
+    @include ('layout.title', ['title' => 'Edit Brain'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Building' => '/buildings/list'], 'title' => 'Edit Building: '.$building->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Brain: '.$brain->title])
 
-    <form method="post" action="/buildings/edit/{{$building->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/brains/edit/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 
-        @include ('layout.forms.text', ['name' => 'title', 'value' => $building->title])
+        @include ('layout.forms.text', ['name' => 'title', 'value' => $brain->title])
 
-        @include ('layout.forms.text', ['name' => 'subtitle', 'value' => $building->subtitle])
+        @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table', 'selected' => $brain->map_id])
 
-        @include ('layout.forms.text', ['name' => 'color', 'value' => $building->color])
+        @include ('layout.forms.select', ['name' => 'brain_type_id', 'label' => 'Type', 'options' => $types, 'type' => 'table', 'selected' => $brain->brain_type_id])
 
-        @include ('layout.forms.text', ['name' => 'set_num', 'value' => $building->set_num])
-
-        @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table', 'selected' => $building->map_id])
-
-        @include ('layout.forms.button', ['label' => 'Edit Building'])
+        @include ('layout.forms.button', ['label' => 'Edit Brain'])
 
     </form>
 
