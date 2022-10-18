@@ -17,8 +17,13 @@ class MapSquare extends Model
         'map_id',
     ];
 
+    public function type()
+    {
+        return $this->belongsTo(MapType::class, 'type_id');
+    }
+
     public function map()
     {
-        return $this->belongsTo(Tool::class, 'tool_type_id');
+        return $this->belongsTo(Map::class, 'map_id');
     }
 }

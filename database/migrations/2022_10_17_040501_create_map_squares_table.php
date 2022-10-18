@@ -4,7 +4,10 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMemesTable extends Migration
+use App\Models\Map;
+use App\Models\MapType;
+
+class CreateMapSquaresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +16,12 @@ class CreateMemesTable extends Migration
      */
     public function up()
     {
-        Schema::create('memes', function (Blueprint $table) {
+        Schema::create('map_squares', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('image')->nullable();
-            $table->dateTime('displayed_at')->useCurrent();
+            $table->integer('x');
+            $table->integer('y');
+            $table->foreignIdFor(Map::class);
+            $table->foreignIdFor(MapType::class);
             $table->timestamps();
         });
     }
@@ -29,6 +33,7 @@ class CreateMemesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memes');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('map_squares');
     }
 }

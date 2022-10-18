@@ -5,22 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\ArticleType;
-
-class Map extends Model
+class MapType extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'title',
-        'width',
-        'height',
-        'published_at',
     ];
 
     public function squares()
     {
-        return $this->hasMany(MapSquares::class, 'map_id');
+        return $this->hasMany(MapSquares::class, 'type_id');
     }
-
 }
