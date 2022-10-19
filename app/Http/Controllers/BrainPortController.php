@@ -27,7 +27,8 @@ class BrainPortController extends Controller
     {
 
         return view('BrainPorts.add', [
-            'brains' => Brain::all(),
+            'functions' => array('Input', 'Output', 'Input/Output'),
+            'types' => BrainType::all(),
         ]);
 
     }
@@ -37,8 +38,8 @@ class BrainPortController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'set_num' => 'nullable',
-            'part_num' => 'required',
+            'function' => 'required',
+            'brain_type_id' => 'required',
         ]);
 
         BrainPort::create($attributes);
@@ -53,7 +54,8 @@ class BrainPortController extends Controller
 
         return view('brainPorts.edit', [
             'brainPort' => $brainPort,
-            'brains' => Brain::all(),
+            'functions' => array('Input', 'Output', 'Input/Output'),
+            'types' => BrainType::all(),
         ]);
 
     }
@@ -63,14 +65,14 @@ class BrainPortController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'set_num' => 'nullable',
-            'part_num' => 'required',
+            'function' => 'required',
+            'brain_type_id' => 'required',
         ]);
 
         $brainPort->update($attributes);
 
-        return redirect('/brains/types/list')
-            ->with('message', 'Brain has been edited!');
+        return redirect('/brains/ports/list')
+            ->with('message', 'Brain Port has been edited!');
 
     }
 

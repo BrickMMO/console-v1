@@ -69,7 +69,7 @@ class BrainTypeController extends Controller
         $brainType->update($attributes);
 
         return redirect('/brains/types/list')
-            ->with('message', 'Brain has been edited!');
+            ->with('message', 'Brain Type has been edited!');
 
     }
 

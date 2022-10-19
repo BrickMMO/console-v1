@@ -4,19 +4,19 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Edit Brain Type'])
+    @include ('layout.title', ['title' => 'Edit Brain Port'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list', 'Manage Brain Types' => '/brains/types/list'], 'title' => 'Edit Brain Type: '.$brainType->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list', 'Manage Brain Ports' => '/brains/ports/list'], 'title' => 'Edit Brain Port: '.$brainPort->title])
 
-    <form method="post" action="/brains/types/edit/{{$brainType->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/brains/ports/edit/{{$brainPort->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 
-        @include ('layout.forms.text', ['name' => 'title', 'value' => $brainType->title])
+        @include ('layout.forms.text', ['name' => 'title', 'value' => $brainPort->title])
 
-        @include ('layout.forms.text', ['name' => 'set_num', 'label' => 'Set Number', 'value' => $brainType->set_num])
-
-        @include ('layout.forms.text', ['name' => 'part_num', 'label' => 'Part Number', 'value' => $brainType->part_num])
+        @include ('layout.forms.select', ['name' => 'function', 'options' => $functions, 'selected' => $brainPort->function])
+        
+        @include ('layout.forms.select', ['name' => 'brain_type_id', 'label' => 'Type', 'options' => $types, 'type' => 'table', 'selected' => $brainPort->brain_type_id])
 
         @include ('layout.forms.button', ['label' => 'Edit Brain Type'])
 
