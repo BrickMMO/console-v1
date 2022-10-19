@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrainController;
+use App\Http\Controllers\BrainTypeController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
@@ -57,6 +58,7 @@ Route::post('/buildings/add', [BuildingController::class, 'add'])->middleware('a
 Route::get('/buildings/edit/{building:id}', [BuildingController::class, 'editForm'])->where('building', '[0-9]+')->middleware('auth');
 Route::post('/buildings/edit/{building:id}', [BuildingController::class, 'edit'])->where('building', '[0-9]+')->middleware('auth');
 Route::get('/buildings/delete/{building:id}', [BuildingController::class, 'delete'])->where('building', '[0-9]+')->middleware('auth');
+Route::get('/buildings/delete/image/{building:id}', [BuildingController::class, 'deleteImage'])->where('building', '[0-9]+')->middleware('auth');
 Route::get('/buildings/image/{building:id}', [BuildingController::class, 'imageForm'])->where('building', '[0-9]+')->middleware('auth');
 Route::post('/buildings/image/{building:id}', [BuildingController::class, 'image'])->where('building', '[0-9]+')->middleware('auth');
 
@@ -66,6 +68,15 @@ Route::post('/brains/add', [BrainController::class, 'add'])->middleware('auth');
 Route::get('/brains/edit/{brain:id}', [BrainController::class, 'editForm'])->where('brain', '[0-9]+')->middleware('auth');
 Route::post('/brains/edit/{brain:id}', [BrainController::class, 'edit'])->where('brain', '[0-9]+')->middleware('auth');
 Route::get('/brains/delete/{brain:id}', [BrainController::class, 'delete'])->where('brain', '[0-9]+')->middleware('auth');
+
+Route::get('/brains/types/list', [BrainTypeController::class, 'list'])->middleware('auth');
+Route::get('/brains/types/add', [BrainTypeController::class, 'addForm'])->middleware('auth');
+Route::post('/brains/types/add', [BrainTypeController::class, 'add'])->middleware('auth');
+Route::get('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'editForm'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::post('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'edit'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::get('/brains/types/delete/{brainType:id}', [BrainTypeController::class, 'delete'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::get('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'imageForm'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::post('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'image'])->where('brainType', '[0-9]+')->middleware('auth');
 
 
 

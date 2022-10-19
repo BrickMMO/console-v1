@@ -112,6 +112,7 @@ class BuildingController extends Controller
         
         return redirect('/buildings/list')
             ->with('message', 'Building image has been edited!');
+            
     }
 
     public function deleteImage(Building $building)

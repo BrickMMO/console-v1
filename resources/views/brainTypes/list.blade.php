@@ -4,62 +4,54 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Manage Buildings'])
+    @include ('layout.title', ['title' => 'Manage Brain Types'])
 
-    @include ('layout.breadcrumbs', ['title' => 'Manage Buildings'])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Manage Brain Types'])
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
             <th>Title</th>
-            <th>Set</th>
-            <th>Squares</th>
+            <th>Set Num</th>
+            <th>Part Num</th>    
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
-        <?php foreach($buildings as $building): ?>
+        <?php foreach($brainTypes as $brainType): ?>
             <tr>
                 <td>
-                    {{$building->id}}
+                    {{$brainType->id}}
                 </td>
                 <td>
-                    @if ($building->image)
+                    @if ($brainType->image)
                         <div class="w3-center w3-light-grey w3-padding w3-border">
-                            <img src="{{asset('storage/'.$building->image)}}" width="50">
+                            <img src="{{asset('storage/'.$brainType->image)}}" width="50">
                         </div>
                     @endif
                 </td>
                 <td>
-                    {{$building->title}}
-                    <br>
-                    <small>
-                        @if ($building->subtitle)
-                            {{$building->subtitle}}
-                            <br>
-                        @endif
-                        Map: {{$building->map->title}}
-                    </small>
+                    {{$brainType->title}}
                 </td>
                 <td>
-                    {{$building->set_num}}
+                    {{$brainType->set_num}}
                 </td>
                 <td>
-                    {{$building->squares->count()}}
+                    {{$brainType->part_num}}
                 </td>
                 <td>
-                    <a href="/buildings/image/{{$building->id}}">
+                    <a href="/brains/types/image/{{$brainType->id}}">
                         <i class="fas fa-camera"></i> 
                     </a>
                 </td>
                 <td>
-                    <a href="/buildings/edit/{{$building->id}}">
+                    <a href="/brains/types/edit/{{$brainType->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/buildings/delete/{{$building->id}}">
+                    <a href="/brains/types/delete/{{$brainType->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>
@@ -67,7 +59,7 @@
         <?php endforeach; ?>
     </table>
 
-    @include ('layout.forms.button', ['label' => 'Add Building', 'href' => '/buildings/add'])
+    @include ('layout.forms.button', ['label' => 'Add Brain Types', 'href' => '/brains/types/add'])
 
 </section>
 
