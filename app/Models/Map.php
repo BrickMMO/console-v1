@@ -17,6 +17,22 @@ class Map extends Model
         'published_at',
     ];
 
+    public function grid()
+    {
+
+        $mapSquares = MapSquare::where('map_id', '=', $this->id)->orderBy('x')->orderBy('y')->get();
+
+        $grid = array();
+
+        foreach($mapSquares as $mapSquare)
+        {
+            $grid[$mapSquare['x']][$mapSquare['y']] = $mapSquare;
+        }
+
+        return $grid;
+
+    }
+
     public function squares()
     {
         return $this->hasMany(MapSquare::class, 'map_id');

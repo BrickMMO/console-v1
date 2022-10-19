@@ -52,6 +52,7 @@ Route::post('/maps/add', [MapController::class, 'add'])->middleware('auth');
 Route::get('/maps/edit/{map:id}', [MapController::class, 'editForm'])->where('map', '[0-9]+')->middleware('auth');
 Route::post('/maps/edit/{map:id}', [MapController::class, 'edit'])->where('map', '[0-9]+')->middleware('auth');
 Route::get('/maps/delete/{map:id}', [MapController::class, 'delete'])->where('map', '[0-9]+')->middleware('auth');
+Route::get('/maps/view/{map:id}', [MapController::class, 'view'])->where('map', '[0-9]+')->middleware('auth');
 
 Route::get('/buildings/list', [BuildingController::class, 'list'])->middleware('auth');
 Route::get('/buildings/add', [BuildingController::class, 'addForm'])->middleware('auth');

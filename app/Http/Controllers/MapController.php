@@ -140,5 +140,14 @@ class MapController extends Controller
             ->with('message', 'Map has been deleted!');                
         
     }
+
+    public function view(Map $map)
+    {
+
+        return view('maps.view', [
+            'map' => $map,
+        ]);
+
+    }
     
 }
