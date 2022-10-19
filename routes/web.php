@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrainController;
 use App\Http\Controllers\BrainTypeController;
+use App\Http\Controllers\BrainPortController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
@@ -75,8 +76,24 @@ Route::post('/brains/types/add', [BrainTypeController::class, 'add'])->middlewar
 Route::get('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'editForm'])->where('brainType', '[0-9]+')->middleware('auth');
 Route::post('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'edit'])->where('brainType', '[0-9]+')->middleware('auth');
 Route::get('/brains/types/delete/{brainType:id}', [BrainTypeController::class, 'delete'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::get('/brains/types/delete/image/{brainType:id}', [BrainTypeController::class, 'deleteImage'])->where('brainType', '[0-9]+')->middleware('auth');
 Route::get('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'imageForm'])->where('brainType', '[0-9]+')->middleware('auth');
 Route::post('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'image'])->where('brainType', '[0-9]+')->middleware('auth');
+
+Route::get('/brains/ports/list', [BrainPortController::class, 'list'])->middleware('auth');
+Route::get('/brains/ports/add', [BrainPortController::class, 'addForm'])->middleware('auth');
+Route::post('/brains/ports/add', [BrainPortController::class, 'add'])->middleware('auth');
+Route::get('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'editForm'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::post('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'edit'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/brains/ports/delete/{brainPort:id}', [BrainPortController::class, 'delete'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/brains/ports/delete/image/{brainPort:id}', [BrainPortController::class, 'deleteImage'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/brains/ports/image/{brainPort:id}', [BrainPortController::class, 'imageForm'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::post('/brains/ports/image/{brainPort:id}', [BrainPortController::class, 'image'])->where('brainPort', '[0-9]+')->middleware('auth');
+
+
+
+
+
 
 
 

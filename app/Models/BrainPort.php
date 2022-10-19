@@ -18,7 +18,7 @@ class BrainPort extends Model
         'brain_type_id',
     ];
 
-    public function type()
+    public function brainType()
     {
         return $this->belongsTo(BrainType::class);
     }

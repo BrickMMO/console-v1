@@ -198,7 +198,9 @@ class DatabaseSeeder extends Seeder
             $type->title = $value['title'];
             $type->set_num = $value['set_num'];
             $type->part_num = $value['part_num'];
-            $id = $type->save();
+            $type->save();
+
+            $id = $type->id;
 
             foreach($value['ports'] as $key2 => $value2)
             {
