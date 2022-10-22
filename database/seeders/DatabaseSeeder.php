@@ -210,8 +210,8 @@ class DatabaseSeeder extends Seeder
                 $port->brain_type_id = $id;
                 $port->save();
             }
+            
         }
-
 
     }
    

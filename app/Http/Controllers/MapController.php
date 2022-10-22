@@ -148,7 +148,6 @@ class MapController extends Controller
 
         return view('maps.types', [
             'map' => $map,
-            'grid' => $map->grid(),
             'types' => MapType::all(),
         ]);
 

@@ -4,7 +4,7 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'View Map'])
+    @include ('layout.title', ['title' => 'Map Grid'])
 
     @include ('layout.breadcrumbs', ['links' => ['Manage Maps' => '/maps/list'], 'title' => 'View Map: '.$map->title])
 
@@ -12,7 +12,7 @@
 
         @csrf
 
-        @include ('layout.maps.types', ['map' => $map])
+        @include ('layout.maps.types', ['grid' => $map->grid(), 'types' => $types])
 
         @include ('layout.forms.button', ['label' => 'Edit Map'])
 

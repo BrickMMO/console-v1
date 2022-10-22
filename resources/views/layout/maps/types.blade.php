@@ -3,23 +3,23 @@
 
     <table class="w3-table" id="map-table">
 
-        @for ($i = 0; $i < $map->height; $i++)
+        @foreach ($grid as $i => $row)
 
             <tr>
 
-                @for ($j = 0; $j < $map->width; $j++)
+                @foreach ($row as $j => $col)
 
                     <td data-x="{{$j}}" data-y="{{$i}}">
 
-                        <input type="hidden" name="square[{{$j}}][{{$i}}]">
+                        <input type="hidden" name="square[{{$j}}][{{$i}}]" value="{{$col->map_type_id}}">
 
                     </td>
 
-                @endfor
+                @endforeach
 
             </tr>
 
-        @endfor
+        @endforeach
 
     </table>    
 
@@ -49,9 +49,6 @@ grid.forEach(function(row, i){
         let square = document.querySelector("tr:nth-child(" + (i+1) + ") td:nth-child(" + (j+1) + ")");
         square.classList.add("w3-" + col.type.color);
         square.dataset.type = col.type.id;
-
-        let input = document.querySelector("tr:nth-child(" + (i+1) + ") td:nth-child(" + (j+1) + ") input");
-        input.value = col.type.id;
         
         square.addEventListener("click", function(e){
 
@@ -97,7 +94,7 @@ grid.forEach(function(row, i){
 }
 #map-table td {
     height: 50px;
-    width: {{100/$map->width}}%;
+    width: {{round(100/count($grid[0]))}}%;
 }
 
 

@@ -19,6 +19,7 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
+            <th class="ca-col-icon"></th>
         </tr>
         <?php foreach($buildings as $building): ?>
             <tr>
@@ -57,6 +58,11 @@
                 <td>
                     <a href="/buildings/image/{{$building->id}}">
                         <i class="fas fa-camera"></i> 
+                    </a>
+                </td>
+                <td>
+                    <a href="/buildings/squares/{{$building->id}}">
+                        <i class="fas fa-map"></i> 
                     </a>
                 </td>
                 <td>

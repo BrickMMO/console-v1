@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 
 use App\Models\Building;
 use App\Models\Map;
+use App\Models\MapSquare;
 
 class BuildingController extends Controller
 {
@@ -127,4 +128,37 @@ class BuildingController extends Controller
             ->with('message', 'Building image has been deleted!');
 
     }
+
+    public function squaresForm(Building $building)
+    {
+
+        $map = Map::where('id', $building->map_id)->first();
+
+        return view('buildings.squares', [
+            'building' => $building,
+            'map' => $map,
+        ]);
+
+    }
+
+    public function squares(Building $building, Request $request)
+    {
+
+        $squares = $request->input('square');
+
+        MapSquare::where('building_id', $building->id)->update(['building_id' => 0]);
+
+        foreach($request->squares as $key => $value)
+        {
+
+            MapSquare::where('id', $key)->update(['building_id' => $building->id]);
+
+        }
+
+
+        return redirect('/buildings/list')
+            ->with('message', 'Building has been edited!');      
+
+    }
+
 }
