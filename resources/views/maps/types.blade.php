@@ -8,7 +8,7 @@
 
     @include ('layout.breadcrumbs', ['links' => ['Manage Maps' => '/maps/list'], 'title' => 'View Map: '.$map->title])
 
-    <form method="post" action="/maps/edit/{{$map->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/maps/types/{{$map->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 

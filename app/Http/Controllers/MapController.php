@@ -13,6 +13,7 @@ use App\Models\Map;
 use App\Models\MapSquare;
 use App\Models\MapType;
 
+
 class MapController extends Controller
 {
 
@@ -142,16 +143,7 @@ class MapController extends Controller
         
     }
 
-    public function view(Map $map)
-    {
-
-        return view('maps.view', [
-            'map' => $map,
-        ]);
-
-    }
-
-    public function types(Map $map)
+    public function typesForm(Map $map)
     {
 
         return view('maps.types', [
@@ -159,6 +151,30 @@ class MapController extends Controller
             'grid' => $map->grid(),
             'types' => MapType::all(),
         ]);
+
+    }
+
+    public function types(Map $map, Request $request)
+    {
+
+        $rows = $request->input('square');
+
+        foreach($rows as $x => $row)
+        {
+            foreach($row as $y => $col)
+            {
+                $mapSquare = MapSquare::where('map_id', $map->id)
+                    ->where('x', $x)
+                    ->where('y', $y)
+                    ->first();
+                $mapSquare->map_type_id = $col;
+                $mapSquare->save();
+            }
+
+        }
+
+        return redirect('/maps/list')
+            ->with('message', 'Map has been edited!');      
 
     }
     
