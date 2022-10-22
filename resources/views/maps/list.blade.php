@@ -25,6 +25,7 @@
             <th>Squares</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
+            <th class="ca-col-icon"></th>
         </tr>
         <?php foreach($maps as $map): ?>
             <tr>
@@ -48,6 +49,11 @@
                 </td>
                 <td>
                     {{$map->squares()->count()}}
+                </td>
+                <td>
+                    <a href="/maps/types/{{$map->id}}">
+                        <i class="fas fa-map"></i>
+                    </a>
                 </td>
                 <td>
                     <a href="/maps/edit/{{$map->id}}">

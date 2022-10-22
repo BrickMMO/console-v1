@@ -11,6 +11,7 @@ use App\Models\Building;
 use App\Models\Brain;
 use App\Models\Map;
 use App\Models\MapSquare;
+use App\Models\MapType;
 
 class MapController extends Controller
 {
@@ -146,6 +147,17 @@ class MapController extends Controller
 
         return view('maps.view', [
             'map' => $map,
+        ]);
+
+    }
+
+    public function types(Map $map)
+    {
+
+        return view('maps.types', [
+            'map' => $map,
+            'grid' => $map->grid(),
+            'types' => MapType::all(),
         ]);
 
     }

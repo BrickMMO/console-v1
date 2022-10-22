@@ -17,22 +17,6 @@ class Map extends Model
         'published_at',
     ];
 
-    public function grid()
-    {
-
-        $mapSquares = MapSquare::where('map_id', '=', $this->id)->orderBy('x')->orderBy('y')->get();
-
-        $grid = array();
-
-        foreach($mapSquares as $mapSquare)
-        {
-            $grid[$mapSquare['x']][$mapSquare['y']] = $mapSquare;
-        }
-
-        return $grid;
-
-    }
-
     public function squares()
     {
         return $this->hasMany(MapSquare::class, 'map_id');
@@ -46,6 +30,24 @@ class Map extends Model
     public function brains()
     {
         return $this->hasMany(Brain::class, 'map_id');
+    }
+
+
+    public function grid()
+    {
+
+        $mapSquares = MapSquare::where('map_id', '=', $this->id)->orderBy('x')->orderBy('y')->get();
+
+        $grid = array();
+
+        foreach($mapSquares as $mapSquare)
+        {
+            $mapSquare['type'] = MapType::where('id', $mapSquare->map_type_id)->first(); 
+            $grid[$mapSquare['y']][$mapSquare['x']] = $mapSquare;
+        }
+
+        return $grid;
+
     }
 
 }
