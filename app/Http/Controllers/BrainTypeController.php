@@ -101,7 +101,7 @@ class BrainTypeController extends Controller
 
         Storage::delete($brainType->image);
         
-        $path = request()->file('image')->store('brainType');
+        $path = request()->file('image')->store('brainTypes');
 
         $brainType->image = $path;
         $brainType->save();

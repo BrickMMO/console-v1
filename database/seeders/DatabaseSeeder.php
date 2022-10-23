@@ -28,6 +28,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        // Delete buildings and brains folder
+        Storage::deleteDirectory('buildings');
+        Storage::deleteDirectory('brainType');
+
         // Add new user
         $user = new User();
         $user->first = "Adam";
@@ -85,47 +89,57 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Flourish & Blotts & Florean Fortescue\'s Ice Cream Parlor',
                 'set_num' => '75798',
                 'color' => '6D8E6E',
+                'image' => 'blotts.jpg',
                 'squares' => array(1,2),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Weasley\'s Wizard Wheezes & Knockturn Alley',
                 'set_num' => '75798',
                 'color' => 'E9C9FF',
+                'image' => 'wizard.jpg',
                 'squares' => array(3,4),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Quality Quidditch™ Supplies & The Daily Prophet™',
                 'set_num' => '75798',
                 'color' => '6D8E6E',
+                'image' => 'quidditch.jpg',
                 'squares' => array(7,8),
             ),array(
                 'title' => 'Dagobah™ Jedi™ Training Diorama',
                 'subtitle' => '',
                 'set_num' => '75330',
                 'color' => 'D7AE71',
+                'image' => 'jedi.jpg',
                 'squares' => array(9,10),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Ollivanders™ Wandshop & Scribbulus',
                 'set_num' => '75798',
                 'color' => '003E62',
+                'image' => 'wand.jpg',
                 'squares' => array(11,12),
             ),array(
                 'title' => 'Boutique Hotel',
                 'subtitle' => '',
                 'set_num' => '10297',
                 'color' => 'BE6A33',
+                'image' => 'boutique.jpg',
                 'squares' => array(45,46,57,58),
             ),
         );
 
         foreach($buildings as $key => $value)
         {
+
+            $path = Storage::putFile('buildings', new File(__DIR__.'/images/'.$value['image']));
+
             $building = new Building();
             $building->title = $value['title'];
             $building->subtitle = $value['subtitle'];
             $building->set_num = $value['set_num'];
             $building->color = $value['color'];
+            $building->image = $path;
             $building->map_id = 1;
             $building->save();
             $id = $building->id;
@@ -145,6 +159,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Mindstorms EV3',
                 'set_num' => '31313',
                 'part_num' => '95646',
+                'image' => 'ev3_hub.jpg',
                 'ports' => array(
                     'A' => 'Output',
                     'B' => 'Output',
@@ -160,6 +175,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Robot Inventor',
                 'set_num' => '51515',
                 'part_num' => '67718',
+                'image' => 'inventor_hub.jpg',
                 'ports' => array(
                     'A' => 'Input/Output',
                     'B' => 'Input/Output',
@@ -173,6 +189,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'SPIKE™ Prime Set',
                 'set_num' => '45678',
                 'part_num' => '53444',
+                'image' => 'spike_hub.jpg',
                 'ports' => array(
                     'A' => 'Input/Output',
                     'B' => 'Input/Output',
@@ -186,6 +203,7 @@ class DatabaseSeeder extends Seeder
                 'title' => 'SPIKE™ Essential',
                 'set_num' => '45345',
                 'part_num' => '67351',
+                'image' => 'essentials_hub.jpg',
                 'ports' => array(
                     'A' => 'Input/Output',
                     'B' => 'Input/Output',
@@ -195,10 +213,14 @@ class DatabaseSeeder extends Seeder
 
         foreach($types as $key => $value)
         {
+
+            $path = Storage::putFile('brainTypes', new File(__DIR__.'/images/'.$value['image']));
+
             $type = new BrainType();
             $type->title = $value['title'];
             $type->set_num = $value['set_num'];
             $type->part_num = $value['part_num'];
+            $type->image = $path;
             $type->save();
 
             $id = $type->id;
