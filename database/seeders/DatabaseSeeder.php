@@ -10,6 +10,7 @@ use Illuminate\Http\File;
 
 use App\Models\Building;
 use App\Models\Brain;
+use App\Models\BrainFunction;
 use App\Models\BrainPort;
 use App\Models\BrainType;
 use App\Models\Map;
@@ -210,7 +211,21 @@ class DatabaseSeeder extends Seeder
                 $port->brain_type_id = $id;
                 $port->save();
             }
-            
+
+        }
+
+        // Buildings
+        $functions = array(
+            array(
+                'title' => 'Lights',
+            ),
+        );
+
+        foreach($functions as $key => $value)
+        {
+            $function = new BrainFunction();
+            $function->title = $value['title'];
+            $function->save();
         }
 
     }
