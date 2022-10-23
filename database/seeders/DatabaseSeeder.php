@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 
         // Delete buildings and brains folder
         Storage::deleteDirectory('buildings');
-        Storage::deleteDirectory('brainType');
+        Storage::deleteDirectory('brainTypes');
 
         // Add new user
         $user = new User();
