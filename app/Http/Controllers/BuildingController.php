@@ -151,11 +151,13 @@ class BuildingController extends Controller
         foreach($request->squares as $key => $value)
         {
 
-            MapSquare::where('id', $key)->update(['building_id' => $building->id]);
+            if($value == 'on')
+            {
+                MapSquare::where('id', $key)->update(['building_id' => $building->id]);
+            }
 
         }
-
-
+        
         return redirect('/buildings/list')
             ->with('message', 'Building has been edited!');      
 

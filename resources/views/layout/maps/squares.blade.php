@@ -11,7 +11,7 @@
 
                 <td data-x="{{$j}}" data-y="{{$i}}">
 
-                    <input type="checkbox" name="squares[{{$col->id}}]" value="on"{{in_array($col->id, $selected) ? ' checked' : ''}}
+                    <input type="hidden" name="squares[{{$col->id}}]" value="{{in_array($col->id, $selected) ? 'on' : 'off'}}" size="3">
 
                 </td>
 
@@ -48,8 +48,33 @@ grid.forEach(function(row, i){
         let square = document.querySelector("tr:nth-child(" + (i+1) + ") td:nth-child(" + (j+1) + ")");
         square.classList.add("w3-" + col.type.color);
         square.dataset.type = col.type.id;
+
+        if(square.querySelector("input").value == 'on')
+        {
+            square.classList.add("w3-red");
+        }
         
-        
+        square.addEventListener("click", function(e){
+
+            /*
+            console.log(this.dataset.x);
+            console.log(this.dataset.y);
+            console.log(this.dataset.type);
+            */
+
+            if(e.target.querySelector("input").value == 'on')
+            {
+                e.target.querySelector("input").value = 'off';
+                square.classList.remove("w3-red");
+            }
+            else
+            {
+                e.target.querySelector("input").value = 'on';
+                square.classList.add("w3-red");
+            }
+            
+
+        });
 
     });
 
