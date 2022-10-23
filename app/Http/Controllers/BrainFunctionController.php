@@ -55,8 +55,6 @@ class BrainFunctionController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
-            'set_num' => 'nullable',
-            'part_num' => 'required',
         ]);
 
         $brainFunction->update($attributes);

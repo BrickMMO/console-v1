@@ -12,7 +12,9 @@
         </div>
         <div class="w3-third w3-right-align w3-small ">
             <a href="/brains/types/list">Manage Brain Types</a> | 
-            <a href="/brains/ports/list">Manage Brain Ports</a>
+            <a href="/brains/ports/list">Manage Brain Ports</a> | 
+            <a href="/brains/functions/list">Manage Brain Functions</a>
+
         </div>
     </div>
 

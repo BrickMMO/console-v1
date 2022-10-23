@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrainController;
+use App\Http\Controllers\BrainFunctionController;
 use App\Http\Controllers\BrainTypeController;
 use App\Http\Controllers\BrainPortController;
 use App\Http\Controllers\BuildingController;
@@ -92,9 +93,14 @@ Route::get('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'ed
 Route::post('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'edit'])->where('brainPort', '[0-9]+')->middleware('auth');
 Route::get('/brains/ports/delete/{brainPort:id}', [BrainPortController::class, 'delete'])->where('brainPort', '[0-9]+')->middleware('auth');
 Route::get('/brains/ports/delete/image/{brainPort:id}', [BrainPortController::class, 'deleteImage'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::get('/brains/ports/image/{brainPort:id}', [BrainPortController::class, 'imageForm'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::post('/brains/ports/image/{brainPort:id}', [BrainPortController::class, 'image'])->where('brainPort', '[0-9]+')->middleware('auth');
 
+Route::get('/brains/functions/list', [BrainFunctionController::class, 'list'])->middleware('auth');
+Route::get('/brains/functions/add', [BrainFunctionController::class, 'addForm'])->middleware('auth');
+Route::post('/brains/functions/add', [BrainFunctionController::class, 'add'])->middleware('auth');
+Route::get('/brains/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'editForm'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::post('/brains/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'edit'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/brains/functions/delete/{brainFunction:id}', [BrainFunctionController::class, 'delete'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/brains/functions/delete/image/{brainFunction:id}', [BrainFunctionController::class, 'deleteImage'])->where('brainFunction', '[0-9]+')->middleware('auth');
 
 
 
