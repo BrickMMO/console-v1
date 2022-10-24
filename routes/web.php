@@ -78,6 +78,8 @@ Route::get('/brains/ports/{brain:id}', [BrainController::class, 'portsForm'])->w
 Route::post('/brains/ports/{brain:id}', [BrainController::class, 'ports'])->where('brain', '[0-9]+')->middleware('auth');
 Route::get('/brains/json/{brain:id}', [BrainController::class, 'jsonForm'])->where('brain', '[0-9]+')->middleware('auth');
 Route::post('/brains/json/{brain:id}', [BrainController::class, 'json'])->where('brain', '[0-9]+')->middleware('auth');
+Route::get('/brains/settings/{brain:id}', [BrainController::class, 'settingsForm'])->where('brain', '[0-9]+')->middleware('auth');
+Route::post('/brains/settings/{brain:id}', [BrainController::class, 'settings'])->where('brain', '[0-9]+')->middleware('auth');
 
 Route::get('/hubs/list', [HubController::class, 'list'])->middleware('auth');
 Route::get('/hubs/add', [HubController::class, 'addForm'])->middleware('auth');

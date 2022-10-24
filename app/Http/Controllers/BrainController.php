@@ -176,4 +176,31 @@ class BrainController extends Controller
 
     }
 
+    public function settingsForm(Brain $brain)
+    {
+
+        $ports = BrainPort::where('brain_id', $brain->id)->orderBy('id')->get();
+
+        return view('brains.settings', [
+            'brain' => $brain,
+            'brainPorts' => $ports,
+        ]);
+
+    }
+
+    public function settings(Brain $brain, Request $request)
+    {
+
+        foreach($request->settings as $key => $value)
+        {
+            $brainPort = BrainPort::find($key);
+            $brainPort->settings = $value;
+            $brainPort->save();
+        }
+
+        return redirect('/brains/list')
+            ->with('message', 'Brain has been edited!');
+
+    }
+
 }

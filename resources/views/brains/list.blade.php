@@ -29,6 +29,7 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
+            <th class="ca-col-icon"></th>
         </tr>
         <?php foreach($brains as $brain): ?>
             <tr>
@@ -60,6 +61,11 @@
                 <td>
                     <a href="/brains/ports/{{$brain->id}}">
                         <i class="fas fa-plug"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="/brains/settings/{{$brain->id}}">
+                        <i class="fas fa-cog"></i>
                     </a>
                 </td>
                 <td>
