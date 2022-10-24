@@ -4,9 +4,9 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Edit Brain'])
+    @include ('layout.title', ['title' => 'Edit Ports'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Brain: '.$brain->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Ports: '.$brain->title])
 
     <form method="post" action="/brains/ports/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
@@ -25,7 +25,7 @@
         @endforeach
 
         
-        @include ('layout.forms.button', ['label' => 'Edit Brain'])
+        @include ('layout.forms.button', ['label' => 'Edit Ports'])
 
     </form>
 

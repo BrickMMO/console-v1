@@ -149,4 +149,31 @@ class BrainController extends Controller
 
     }
 
+    public function jsonForm(Brain $brain)
+    {
+
+        $ports = BrainPort::where('brain_id', $brain->id)->orderBy('id')->get();
+
+        return view('brains.json', [
+            'brain' => $brain,
+            'brainPorts' => $ports,
+        ]);
+
+    }
+
+    public function json(Brain $brain, Request $request)
+    {
+
+        foreach($request->json as $key => $value)
+        {
+            $brainPort = BrainPort::find($key);
+            $brainPort->json = $value;
+            $brainPort->save();
+        }
+
+        return redirect('/brains/list')
+            ->with('message', 'Brain has been edited!');
+
+    }
+
 }

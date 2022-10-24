@@ -16,4 +16,9 @@ class HubFunction extends Model
         'title',
     ];
     
+    public function brainPorts()
+    {
+        return $this->hasMany(BrainPort::class);
+    }
+
 }

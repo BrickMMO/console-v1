@@ -12,7 +12,8 @@ class BrainPort extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'brain_ig',
+        'json',
+        'brain_id',
         'hub_port_id',
         'hub_function_id',
     ];
@@ -22,7 +23,7 @@ class BrainPort extends Model
         return $this->belongsTo(HubPort::class);
     }
 
-    public function hubfunction()
+    public function hubFunction()
     {
         return $this->belongsTo(HubFunction::class);
     }
