@@ -250,6 +250,27 @@ class DatabaseSeeder extends Seeder
             $function->save();
         }
 
+        // Brains
+        $brains = array(
+            array(
+                'title' => 'Brain 001 - Lights 001',
+                'brain_type_id' => 1,
+                'map_id' => 1,
+            ),
+        );
+
+        foreach($brains as $key => $value)
+        {
+            $brain = new Brain();
+            $brain->title = $value['title'];
+            $brain->brain_type_id = $value['brain_type_id'];
+            $brain->map_id = $value['map_id'];
+            $brain->save();
+        }
+
+
+
+
     }
    
 }
