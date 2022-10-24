@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrainFunctionsTable extends Migration
+class CreateHubsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateBrainFunctionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brain_functions', function (Blueprint $table) {
+        Schema::create('hubs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image')->nullable();
+            $table->string('set_num')->nullable();
+            $table->string('part_num')->nullable();
         });
     }
 
@@ -26,6 +29,7 @@ class CreateBrainFunctionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brain_functions');
+        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('hubs');
     }
 }

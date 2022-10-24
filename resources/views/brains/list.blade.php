@@ -27,6 +27,7 @@
             <th>Part</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
+            <th class="ca-col-icon"></th>
         </tr>
         <?php foreach($brains as $brain): ?>
             <tr>
@@ -54,6 +55,11 @@
                 </td>
                 <td>
                     {{$brain->brainType->part_num}}
+                </td>
+                <td>
+                    <a href="/brains/ports/{{$brain->id}}">
+                        <i class="fas fa-plug"></i>
+                    </a>
                 </td>
                 <td>
                     <a href="/brains/edit/{{$brain->id}}">

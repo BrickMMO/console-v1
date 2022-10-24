@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BrainPort extends Model
+class Hub extends Model
 {
 
     use HasFactory;
@@ -14,13 +14,19 @@ class BrainPort extends Model
 
     protected $fillable = [
         'title',
-        'function',
-        'brain_type_id',
+        'set_num',
+        'part_num',
+        'image',
     ];
 
-    public function brainType()
+    public function brains()
     {
-        return $this->belongsTo(BrainType::class);
+        return $this->hasMany(Brain::class);
+    }
+
+    public function ports()
+    {
+        return $this->hasMany(HubPort::class);
     }
     
 }

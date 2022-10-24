@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\BrainType;
+use App\Models\Hub;
 use App\Models\Map;
 
 class CreateBrainsTable extends Migration
@@ -19,7 +19,7 @@ class CreateBrainsTable extends Migration
         Schema::create('brains', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->foreignIdFor(BrainType::class);
+            $table->foreignIdFor(Hub::class);
             $table->foreignIdFor(Map::class);
             $table->timestamps();
         });

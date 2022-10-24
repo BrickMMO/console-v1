@@ -21,7 +21,6 @@ use App\Http\Controllers\ToolController;
 use App\Http\Controllers\ToolTypeController;
 use App\Http\Controllers\TopicController;
 
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -75,6 +74,8 @@ Route::post('/brains/add', [BrainController::class, 'add'])->middleware('auth');
 Route::get('/brains/edit/{brain:id}', [BrainController::class, 'editForm'])->where('brain', '[0-9]+')->middleware('auth');
 Route::post('/brains/edit/{brain:id}', [BrainController::class, 'edit'])->where('brain', '[0-9]+')->middleware('auth');
 Route::get('/brains/delete/{brain:id}', [BrainController::class, 'delete'])->where('brain', '[0-9]+')->middleware('auth');
+Route::get('/brains/ports/{brain:id}', [BrainController::class, 'portsForm'])->where('brain', '[0-9]+')->middleware('auth');
+Route::post('/brains/ports/{brain:id}', [BrainController::class, 'ports'])->where('brain', '[0-9]+')->middleware('auth');
 
 Route::get('/brains/types/list', [BrainTypeController::class, 'list'])->middleware('auth');
 Route::get('/brains/types/add', [BrainTypeController::class, 'addForm'])->middleware('auth');

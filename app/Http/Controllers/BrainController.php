@@ -88,4 +88,31 @@ class BrainController extends Controller
         
     }
 
+    public function portsForm(Brain $brain)
+    {
+
+        return view('brains.edit', [
+            'brain' => $brain,
+            'maps' => Map::all(),
+            'types' => BrainType::all(),
+        ]);
+
+    }
+
+    public function ports(Brain $brain)
+    {
+
+        $attributes = request()->validate([
+            'title' => 'required',
+            'map_id' => 'required',
+            'brain_type_id' => 'required',
+        ]);
+
+        $brain->update($attributes);
+
+        return redirect('/brains/list')
+            ->with('message', 'Brain has been edited!');
+
+    }
+
 }

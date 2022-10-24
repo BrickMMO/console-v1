@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-use App\Models\BrainType;
+use App\Models\Hub;
 
-class CreateBrainPortsTable extends Migration
+class CreateHubPortsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class CreateBrainPortsTable extends Migration
      */
     public function up()
     {
-        Schema::create('brain_ports', function (Blueprint $table) {
+        Schema::create('hub_ports', function (Blueprint $table) {
             $table->id();
             $table->string('title')->default('');
             $table->enum('function', ['Input','Output','Input/Output'])->default('Input');
-            $table->foreignIdFor(BrainType::class);
+            $table->foreignIdFor(Hub::class);
         });
     }
 
@@ -31,6 +31,6 @@ class CreateBrainPortsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('brain_ports');
+        Schema::dropIfExists('hub_ports');
     }
 }

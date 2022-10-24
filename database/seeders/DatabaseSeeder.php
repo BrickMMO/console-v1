@@ -10,9 +10,9 @@ use Illuminate\Http\File;
 
 use App\Models\Building;
 use App\Models\Brain;
-use App\Models\BrainFunction;
-use App\Models\BrainPort;
-use App\Models\BrainType;
+use App\Models\Hub;
+use App\Models\HubFunction;
+use App\Models\HubPort;
 use App\Models\Map;
 use App\Models\MapSquare;
 use App\Models\MapType;
@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
 
         // Delete buildings and brains folder
         Storage::deleteDirectory('buildings');
-        Storage::deleteDirectory('brainTypes');
+        Storage::deleteDirectory('hubs');
 
         // Add new user
         $user = new User();
@@ -153,8 +153,8 @@ class DatabaseSeeder extends Seeder
             
         }
 
-        // Add brain types
-        $types = array(
+        // Add hubs
+        $hubs = array(
             array(
                 'title' => 'Mindstorms EV3',
                 'set_num' => '31313',
@@ -211,26 +211,26 @@ class DatabaseSeeder extends Seeder
             ),
         );
 
-        foreach($types as $key => $value)
+        foreach($hubs as $key => $value)
         {
 
-            $path = Storage::putFile('brainTypes', new File(__DIR__.'/images/'.$value['image']));
+            $path = Storage::putFile('hubs', new File(__DIR__.'/images/'.$value['image']));
 
-            $type = new BrainType();
-            $type->title = $value['title'];
-            $type->set_num = $value['set_num'];
-            $type->part_num = $value['part_num'];
-            $type->image = $path;
-            $type->save();
+            $hub = new Hub();
+            $hub->title = $value['title'];
+            $hub->set_num = $value['set_num'];
+            $hub->part_num = $value['part_num'];
+            $hub->image = $path;
+            $hub->save();
 
-            $id = $type->id;
+            $id = $hub->id;
 
             foreach($value['ports'] as $key2 => $value2)
             {
-                $port = new BrainPort();
+                $port = new HubPort();
                 $port->title = $key2;
                 $port->function = $value2;
-                $port->brain_type_id = $id;
+                $port->hub_id = $id;
                 $port->save();
             }
 
@@ -241,11 +241,14 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Lights',
             ),
+            array(
+                'title' => 'Weasley\'s Hat',
+            ),
         );
 
         foreach($functions as $key => $value)
         {
-            $function = new BrainFunction();
+            $function = new HubFunction();
             $function->title = $value['title'];
             $function->save();
         }
@@ -254,7 +257,7 @@ class DatabaseSeeder extends Seeder
         $brains = array(
             array(
                 'title' => 'Brain 001 - Lights 001',
-                'brain_type_id' => 1,
+                'hub_id' => 1,
                 'map_id' => 1,
             ),
         );
@@ -263,7 +266,7 @@ class DatabaseSeeder extends Seeder
         {
             $brain = new Brain();
             $brain->title = $value['title'];
-            $brain->brain_type_id = $value['brain_type_id'];
+            $brain->hub_id = $value['hub_id'];
             $brain->map_id = $value['map_id'];
             $brain->save();
         }
