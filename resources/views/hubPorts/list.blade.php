@@ -4,9 +4,9 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Manage Brain Ports'])
+    @include ('layout.title', ['title' => 'Manage Ports'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Manage Brain Ports'])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Hubs' => '/hubs/list'], 'title' => 'Manage Ports'])
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
@@ -16,28 +16,28 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
-        <?php foreach($brainPorts as $brainPort): ?>
+        <?php foreach($hubPorts as $hubPort): ?>
             <tr>
                 <td>
-                    {{$brainPort->id}}
+                    {{$hubPort->id}}
                 </td>
                 <td>
-                    Port: {{$brainPort->title}}
+                    Port: {{$hubPort->title}}
                     <small>
                         <br>
-                        {{$brainPort->brainType->title}}
+                        {{$hubPort->hub->title}}
                     </small>
                 </td>
                 <td>
-                    {{$brainPort->function}}
+                    {{$hubPort->function}}
                 </td>
                 <td>
-                    <a href="/brains/ports/edit/{{$brainPort->id}}">
+                    <a href="/hubs/ports/edit/{{$hubPort->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/brains/ports/delete/{{$brainPort->id}}">
+                    <a href="/hubs/ports/delete/{{$hubPort->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>
@@ -45,7 +45,7 @@
         <?php endforeach; ?>
     </table>
 
-    @include ('layout.forms.button', ['label' => 'Add Brain Ports', 'href' => '/brains/ports/add'])
+    @include ('layout.forms.button', ['label' => 'Add Ports', 'href' => '/hubs/ports/add'])
 
 </section>
 

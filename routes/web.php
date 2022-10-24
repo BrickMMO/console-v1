@@ -87,13 +87,13 @@ Route::get('/hubs/delete/image/{hub:id}', [HubController::class, 'deleteImage'])
 Route::get('/hubs/image/{hub:id}', [HubController::class, 'imageForm'])->where('hub', '[0-9]+')->middleware('auth');
 Route::post('/hubs/image/{hub:id}', [HubController::class, 'image'])->where('hub', '[0-9]+')->middleware('auth');
 
-Route::get('/hubs/ports/list', [BrainPortController::class, 'list'])->middleware('auth');
-Route::get('/hubs/ports/add', [BrainPortController::class, 'addForm'])->middleware('auth');
-Route::post('/hubs/ports/add', [BrainPortController::class, 'add'])->middleware('auth');
-Route::get('/hubs/ports/edit/{brainPort:id}', [BrainPortController::class, 'editForm'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::post('/hubs/ports/edit/{brainPort:id}', [BrainPortController::class, 'edit'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::get('/hubs/ports/delete/{brainPort:id}', [BrainPortController::class, 'delete'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::get('/hubs/ports/delete/image/{brainPort:id}', [BrainPortController::class, 'deleteImage'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/list', [HubPortController::class, 'list'])->middleware('auth');
+Route::get('/hubs/ports/add', [HubPortController::class, 'addForm'])->middleware('auth');
+Route::post('/hubs/ports/add', [HubPortController::class, 'add'])->middleware('auth');
+Route::get('/hubs/ports/edit/{hubPort:id}', [HubPortController::class, 'editForm'])->where('hubPort', '[0-9]+')->middleware('auth');
+Route::post('/hubs/ports/edit/{hubPort:id}', [HubPortController::class, 'edit'])->where('brainhubPortPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/delete/{hubPort:id}', [HubPortController::class, 'delete'])->where('hubPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/delete/image/{hubPort:id}', [HubPortController::class, 'deleteImage'])->where('hubPort', '[0-9]+')->middleware('auth');
 
 Route::get('/hubs/functions/list', [BrainFunctionController::class, 'list'])->middleware('auth');
 Route::get('/hubs/functions/add', [BrainFunctionController::class, 'addForm'])->middleware('auth');
