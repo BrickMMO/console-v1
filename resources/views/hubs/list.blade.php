@@ -4,9 +4,18 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Manage Brain Types'])
+    @include ('layout.title', ['title' => 'Manage Hubs'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Manage Brain Types'])
+    <div>
+        <div class="w3-twothird">
+            @include ('layout.breadcrumbs', ['title' => 'Manage Hubs'])
+        </div>
+        <div class="w3-third w3-right-align w3-small ">
+            <a href="/hubs/ports/list">Manage Ports</a> | 
+            <a href="/hubs/functions/list">Manage Functions</a>
+
+        </div>
+    </div>
 
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
@@ -19,39 +28,39 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
-        <?php foreach($brainTypes as $brainType): ?>
+        <?php foreach($hubs as $hub): ?>
             <tr>
                 <td>
-                    {{$brainType->id}}
+                    {{$hub->id}}
                 </td>
                 <td>
-                    @if ($brainType->image)
+                    @if ($hub->image)
                         <div class="w3-center w3-light-grey w3-padding w3-border">
-                            <img src="{{asset('storage/'.$brainType->image)}}" width="50">
+                            <img src="{{asset('storage/'.$hub->image)}}" width="50">
                         </div>
                     @endif
                 </td>
                 <td>
-                    {{$brainType->title}}
+                    {{$hub->title}}
                 </td>
                 <td>
-                    {{$brainType->set_num}}
+                    {{$hub->set_num}}
                 </td>
                 <td>
-                    {{$brainType->part_num}}
+                    {{$hub->part_num}}
                 </td>
                 <td>
-                    <a href="/brains/types/image/{{$brainType->id}}">
+                    <a href="/brains/hubs/image/{{$hub->id}}">
                         <i class="fas fa-camera"></i> 
                     </a>
                 </td>
                 <td>
-                    <a href="/brains/types/edit/{{$brainType->id}}">
+                    <a href="/brains/hubs/edit/{{$hub->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/brains/types/delete/{{$brainType->id}}">
+                    <a href="/brains/hubs/delete/{{$hub->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>
@@ -59,7 +68,7 @@
         <?php endforeach; ?>
     </table>
 
-    @include ('layout.forms.button', ['label' => 'Add Brain Types', 'href' => '/brains/types/add'])
+    @include ('layout.forms.button', ['label' => 'Add Hub', 'href' => '/brains/hubs/add'])
 
 </section>
 

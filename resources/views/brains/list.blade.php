@@ -11,9 +11,9 @@
             @include ('layout.breadcrumbs', ['title' => 'Manage Brains'])
         </div>
         <div class="w3-third w3-right-align w3-small ">
-            <a href="/brains/hubs/list">Manage Hubs</a> | 
-            <a href="/brains/ports/list">Manage Ports</a> | 
-            <a href="/brains/functions/list">Manage Functions</a>
+            <a href="/hubs/list">Manage Hubs</a> | 
+            <a href="/hubs/ports/list">Manage Ports</a> | 
+            <a href="/hubs/functions/list">Manage Functions</a>
 
         </div>
     </div>

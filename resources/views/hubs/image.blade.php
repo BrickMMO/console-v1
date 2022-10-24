@@ -4,13 +4,13 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Brain Type Image'])
+    @include ('layout.title', ['title' => 'Hub Image'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list', 'Manage Brain Types' => '/brains/types/list'], 'title' => 'Brain Type Image: '.$brainType->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list', 'Manage Hubs' => '/brains/hubs/list'], 'title' => 'Hub Image: '.$hub->title])
 
-    @include ('layout.elements.image', ['image' => $brainType->image, 'width' => 400, 'id' => $brainType->id, 'type' => 'brainTypes'])
+    @include ('layout.elements.image', ['image' => $hub->image, 'width' => 400, 'id' => $hub->id, 'type' => 'hubs'])
 
-    <form method="post" action="/brains/types/image/{{$brainType->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data" autocomplete="off">
+    <form method="post" action="/brains/hubs/image/{{$hub->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data" autocomplete="off">
 
         @csrf
 

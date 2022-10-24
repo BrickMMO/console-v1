@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\BrainController;
-use App\Http\Controllers\BrainFunctionController;
-use App\Http\Controllers\BrainTypeController;
-use App\Http\Controllers\BrainPortController;
+use App\Http\Controllers\HubController;
+use App\Http\Controllers\HubFunctionController;
+use App\Http\Controllers\HubPortController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
@@ -77,31 +77,31 @@ Route::get('/brains/delete/{brain:id}', [BrainController::class, 'delete'])->whe
 Route::get('/brains/ports/{brain:id}', [BrainController::class, 'portsForm'])->where('brain', '[0-9]+')->middleware('auth');
 Route::post('/brains/ports/{brain:id}', [BrainController::class, 'ports'])->where('brain', '[0-9]+')->middleware('auth');
 
-Route::get('/brains/types/list', [BrainTypeController::class, 'list'])->middleware('auth');
-Route::get('/brains/types/add', [BrainTypeController::class, 'addForm'])->middleware('auth');
-Route::post('/brains/types/add', [BrainTypeController::class, 'add'])->middleware('auth');
-Route::get('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'editForm'])->where('brainType', '[0-9]+')->middleware('auth');
-Route::post('/brains/types/edit/{brainType:id}', [BrainTypeController::class, 'edit'])->where('brainType', '[0-9]+')->middleware('auth');
-Route::get('/brains/types/delete/{brainType:id}', [BrainTypeController::class, 'delete'])->where('brainType', '[0-9]+')->middleware('auth');
-Route::get('/brains/types/delete/image/{brainType:id}', [BrainTypeController::class, 'deleteImage'])->where('brainType', '[0-9]+')->middleware('auth');
-Route::get('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'imageForm'])->where('brainType', '[0-9]+')->middleware('auth');
-Route::post('/brains/types/image/{brainType:id}', [BrainTypeController::class, 'image'])->where('brainType', '[0-9]+')->middleware('auth');
+Route::get('/hubs/list', [HubController::class, 'list'])->middleware('auth');
+Route::get('/hubs/add', [HubController::class, 'addForm'])->middleware('auth');
+Route::post('/hubs/add', [HubController::class, 'add'])->middleware('auth');
+Route::get('/hubs/edit/{hub:id}', [HubController::class, 'editForm'])->where('hub', '[0-9]+')->middleware('auth');
+Route::post('/hubs/edit/{hub:id}', [HubController::class, 'edit'])->where('hub', '[0-9]+')->middleware('auth');
+Route::get('/hubs/delete/{hub:id}', [HubController::class, 'delete'])->where('hub', '[0-9]+')->middleware('auth');
+Route::get('/hubs/delete/image/{hub:id}', [HubController::class, 'deleteImage'])->where('hub', '[0-9]+')->middleware('auth');
+Route::get('/hubs/image/{hub:id}', [HubController::class, 'imageForm'])->where('hub', '[0-9]+')->middleware('auth');
+Route::post('/hubs/image/{hub:id}', [HubController::class, 'image'])->where('hub', '[0-9]+')->middleware('auth');
 
-Route::get('/brains/ports/list', [BrainPortController::class, 'list'])->middleware('auth');
-Route::get('/brains/ports/add', [BrainPortController::class, 'addForm'])->middleware('auth');
-Route::post('/brains/ports/add', [BrainPortController::class, 'add'])->middleware('auth');
-Route::get('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'editForm'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::post('/brains/ports/edit/{brainPort:id}', [BrainPortController::class, 'edit'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::get('/brains/ports/delete/{brainPort:id}', [BrainPortController::class, 'delete'])->where('brainPort', '[0-9]+')->middleware('auth');
-Route::get('/brains/ports/delete/image/{brainPort:id}', [BrainPortController::class, 'deleteImage'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/list', [BrainPortController::class, 'list'])->middleware('auth');
+Route::get('/hubs/ports/add', [BrainPortController::class, 'addForm'])->middleware('auth');
+Route::post('/hubs/ports/add', [BrainPortController::class, 'add'])->middleware('auth');
+Route::get('/hubs/ports/edit/{brainPort:id}', [BrainPortController::class, 'editForm'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::post('/hubs/ports/edit/{brainPort:id}', [BrainPortController::class, 'edit'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/delete/{brainPort:id}', [BrainPortController::class, 'delete'])->where('brainPort', '[0-9]+')->middleware('auth');
+Route::get('/hubs/ports/delete/image/{brainPort:id}', [BrainPortController::class, 'deleteImage'])->where('brainPort', '[0-9]+')->middleware('auth');
 
-Route::get('/brains/functions/list', [BrainFunctionController::class, 'list'])->middleware('auth');
-Route::get('/brains/functions/add', [BrainFunctionController::class, 'addForm'])->middleware('auth');
-Route::post('/brains/functions/add', [BrainFunctionController::class, 'add'])->middleware('auth');
-Route::get('/brains/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'editForm'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::post('/brains/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'edit'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::get('/brains/functions/delete/{brainFunction:id}', [BrainFunctionController::class, 'delete'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::get('/brains/functions/delete/image/{brainFunction:id}', [BrainFunctionController::class, 'deleteImage'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/list', [BrainFunctionController::class, 'list'])->middleware('auth');
+Route::get('/hubs/functions/add', [BrainFunctionController::class, 'addForm'])->middleware('auth');
+Route::post('/hubs/functions/add', [BrainFunctionController::class, 'add'])->middleware('auth');
+Route::get('/hubs/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'editForm'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::post('/hubs/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'edit'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/delete/{brainFunction:id}', [BrainFunctionController::class, 'delete'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/delete/image/{brainFunction:id}', [BrainFunctionController::class, 'deleteImage'])->where('brainFunction', '[0-9]+')->middleware('auth');
 
 
 

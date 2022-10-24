@@ -7,7 +7,7 @@
             <div class="w3-padding">
                 <small>
                     <i class="fas fa-trash-alt"></i>
-                    <a href="/{{Str::replace('-', 's/', Str::kebab($type))}}/delete/{{$name ?? 'image'}}/{{$id}}">Delete Image</a>
+                    <a href="/{{$url ?? Str::replace('-', 's/', Str::kebab($type))}}/delete/{{$name ?? 'image'}}/{{$id}}">Delete Image</a>
                 </small>
             </div>
         @endif

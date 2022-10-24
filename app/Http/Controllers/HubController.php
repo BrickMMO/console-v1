@@ -17,7 +17,7 @@ class HubController extends Controller
     {
 
         return view('hubs.list', [
-            'brainTyhubspes' => Hub::orderBy('title')->get()
+            'hubs' => Hub::orderBy('title')->get()
         ]);
 
     }
@@ -87,7 +87,7 @@ class HubController extends Controller
 
     public function imageForm(Hub $hub)
     {
-        return view('hub.image', [
+        return view('hubs.image', [
             'hub' => $hub,
         ]);
     }

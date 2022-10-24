@@ -42,6 +42,7 @@ class ConsoleController extends Controller
             ['icon' => 'fas fa-map', 'text' => 'Maps', 'route' => '/maps/list'],
             ['icon' => 'fas fa-building', 'text' => 'Buildings', 'route' => '/buildings/list'],
             ['icon' => 'fas fa-brain', 'text' => 'LEGO™ Brains', 'route' => '/brains/list'],
+            ['icon' => 'fas fa-server', 'text' => 'Hubs', 'route' => '/hubs/list'],
             ['icon' => 'fas fa-lightbulb', 'text' => 'Lights', 'route' => '/lights/list'],
             
             /*
