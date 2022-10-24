@@ -18,6 +18,7 @@
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
+            <th class="ca-col-image"></th>
             <th>Title</th>
             <th>Dimensions</th>
             <th>Buildings</th>
@@ -34,6 +35,9 @@
                 </td>
                 <td>
                     <a href="/maps/view/{{$map->id}}"><i class="fas fa-map fa-2x" aria-hidden="true"></i></a>
+                </td>
+                <td>
+                    @include ('layout.maps.static', ['grid' => $map->grid()])
                 </td>
                 <td>
                     {{$map->title}}

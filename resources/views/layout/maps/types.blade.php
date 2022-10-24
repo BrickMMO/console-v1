@@ -9,7 +9,7 @@
 
                 @foreach ($row as $j => $col)
 
-                    <td data-x="{{$j}}" data-y="{{$i}}">
+                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}">
 
                         <input type="hidden" name="square[{{$j}}][{{$i}}]" value="{{$col->map_type_id}}">
 
@@ -30,6 +30,9 @@
 let types = {!!$types->toJson()!!};
 let grid = {!!json_encode($grid)!!};
 
+console.log(types);
+console.log(grid);
+
 grid.forEach(function(row, i){
 
     /*
@@ -47,8 +50,8 @@ grid.forEach(function(row, i){
         */
         
         let square = document.querySelector("tr:nth-child(" + (i+1) + ") td:nth-child(" + (j+1) + ")");
-        square.classList.add("w3-" + col.type.color);
-        square.dataset.type = col.type.id;
+        // square.classList.add("w3-" + col.type.color);
+        // square.dataset.type = col.type.id;
         
         square.addEventListener("click", function(e){
 

@@ -42,7 +42,7 @@ class Map extends Model
 
         foreach($mapSquares as $mapSquare)
         {
-            $mapSquare['type'] = MapType::where('id', $mapSquare->map_type_id)->first(); 
+            // $mapSquare['mapType'] = MapType::where('id', $mapSquare->map_type_id)->first(); 
             $grid[$mapSquare['y']][$mapSquare['x']] = $mapSquare;
         }
 

@@ -9,7 +9,7 @@
 
             @foreach ($row as $j => $col)
 
-                <td data-x="{{$j}}" data-y="{{$i}}">
+                <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}">
 
                     <input type="hidden" name="squares[{{$col->id}}]" value="{{in_array($col->id, $selected) ? 'on' : 'off'}}" size="3">
 
@@ -46,8 +46,8 @@ grid.forEach(function(row, i){
         */
         
         let square = document.querySelector("tr:nth-child(" + (i+1) + ") td:nth-child(" + (j+1) + ")");
-        square.classList.add("w3-" + col.type.color);
-        square.dataset.type = col.type.id;
+        // square.classList.add("w3-" + col.type.color);
+        // square.dataset.type = col.type.id;
 
         if(square.querySelector("input").value == 'on')
         {
