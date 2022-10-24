@@ -10,6 +10,7 @@ use Illuminate\Http\File;
 
 use App\Models\Building;
 use App\Models\Brain;
+use App\Models\BrainPort;
 use App\Models\Hub;
 use App\Models\HubFunction;
 use App\Models\HubPort;
@@ -259,6 +260,16 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Brain 001 - Lights 001',
                 'hub_id' => 1,
                 'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '[{"buildings" => [1, 2, 3, 4, 5]}]'),
+                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '[{"buildings" => [6]}]'),
+                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '[{"building" => 2}]'),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => ''),
+                ),
             ),
         );
 
@@ -269,10 +280,20 @@ class DatabaseSeeder extends Seeder
             $brain->hub_id = $value['hub_id'];
             $brain->map_id = $value['map_id'];
             $brain->save();
+
+            $id = $brain->id;
+
+            foreach($value['ports'] as $key2 => $value2)
+            {
+                $port = new BrainPort();
+                $port->json = $value2['json'];
+                $port->hub_port_id = $value2['hub_port_id'];
+                $port->hub_function_id = $value2['hub_function_id'];
+                $port->brain_id = $id;
+                $port->save();
+            }
+
         }
-
-
-
 
     }
    

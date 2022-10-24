@@ -19,6 +19,7 @@ class CreateBrainPortsTable extends Migration
     {
         Schema::create('brain_ports', function (Blueprint $table) {
             $table->id();
+            $table->string('json')->nullable();
             $table->foreignIdFor(Brain::class);
             $table->foreignIdFor(HubPort::class);
             $table->foreignIdFor(HubFunction::class)->nullable();
