@@ -11,9 +11,9 @@
             @include ('layout.breadcrumbs', ['title' => 'Manage Brains'])
         </div>
         <div class="w3-third w3-right-align w3-small ">
-            <a href="/brains/types/list">Manage Brain Types</a> | 
-            <a href="/brains/ports/list">Manage Brain Ports</a> | 
-            <a href="/brains/functions/list">Manage Brain Functions</a>
+            <a href="/brains/hubs/list">Manage Hubs</a> | 
+            <a href="/brains/ports/list">Manage Ports</a> | 
+            <a href="/brains/functions/list">Manage Functions</a>
 
         </div>
     </div>
@@ -35,9 +35,9 @@
                     {{$brain->id}}
                 </td>
                 <td>
-                    @if ($brain->brainType->image)
+                    @if ($brain->hub->image)
                         <div class="w3-center w3-light-grey w3-padding w3-border">
-                            <img src="{{asset('storage/'.$brain->brainType->image)}}" width="50">
+                            <img src="{{asset('storage/'.$brain->hub->image)}}" width="50">
                         </div>
                     @endif
                 </td>
@@ -45,16 +45,16 @@
                     {{$brain->title}}
                     <br>
                     <small>
-                        Type: {{$brain->brainType->title}}
+                        Hub: {{$brain->hub->title}}
                         <br>
                         Map: {{$brain->map->title}}
                     </small>
                 </td>
                 <td>
-                    {{$brain->brainType->set_num}}
+                    {{$brain->hub->set_num}}
                 </td>
                 <td>
-                    {{$brain->brainType->part_num}}
+                    {{$brain->hub->part_num}}
                 </td>
                 <td>
                     <a href="/brains/ports/{{$brain->id}}">

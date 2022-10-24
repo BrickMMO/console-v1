@@ -16,7 +16,7 @@
 
         @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table'])
 
-        @include ('layout.forms.select', ['name' => 'brain_type_id', 'label' => 'Type', 'options' => $types, 'type' => 'table'])
+        @include ('layout.forms.select', ['name' => 'hub_id', 'label' => 'Hub', 'options' => $hubs, 'type' => 'table'])
 
         @include ('layout.forms.button', ['label' => 'Add Building'])
 

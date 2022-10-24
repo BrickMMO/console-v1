@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 use App\Models\Brain;
-use App\Models\BrainType;
+use App\Models\Hub;
 use App\Models\Building;
 use App\Models\Map;
 
@@ -28,7 +28,7 @@ class BrainController extends Controller
 
         return view('brains.add', [
             'maps' => Map::all(),
-            'types' => BrainType::all(),
+            'hubs' => Hub::all(),
         ]);
 
     }
@@ -39,7 +39,7 @@ class BrainController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'map_id' => 'required',
-            'brain_type_id' => 'required',
+            'hub_id' => 'required',
         ]);
 
         Brain::create($attributes);
@@ -55,7 +55,7 @@ class BrainController extends Controller
         return view('brains.edit', [
             'brain' => $brain,
             'maps' => Map::all(),
-            'types' => BrainType::all(),
+            'hubs' => Hub::all(),
         ]);
 
     }
@@ -66,7 +66,7 @@ class BrainController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'map_id' => 'required',
-            'brain_type_id' => 'required',
+            'hub_id' => 'required',
         ]);
 
         $brain->update($attributes);
@@ -94,7 +94,7 @@ class BrainController extends Controller
         return view('brains.edit', [
             'brain' => $brain,
             'maps' => Map::all(),
-            'types' => BrainType::all(),
+            'hubs' => Hub::all(),
         ]);
 
     }
@@ -105,7 +105,7 @@ class BrainController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'map_id' => 'required',
-            'brain_type_id' => 'required',
+            'hub_id' => 'required',
         ]);
 
         $brain->update($attributes);

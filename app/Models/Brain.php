@@ -17,9 +17,9 @@ class Brain extends Model
         'published_at',
     ];
 
-    public function brainType()
+    public function hub()
     {
-        return $this->belongsTo(BrainType::class);
+        return $this->belongsTo(Hub::class);
     }
 
     public function map()
