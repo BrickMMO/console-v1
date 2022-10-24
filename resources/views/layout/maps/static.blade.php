@@ -9,7 +9,7 @@
 
             @foreach ($row as $j => $col)
 
-                <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}"></td>
+                <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{(isset($building) and $building == $col->building_id) ? 'red' : $col->mapType->color}}"></td>
 
             @endforeach
 

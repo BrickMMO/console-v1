@@ -30,4 +30,12 @@ class Building extends Model
         return $this->belongsTo(Map::class);
     }
 
+    public function grid()
+    {
+        $map = Map::find($this->map_id);
+        $grid = $map->grid();
+
+        return $grid;
+    }
+
 }

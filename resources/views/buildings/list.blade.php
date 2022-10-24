@@ -13,6 +13,7 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
             <th class="ca-col-image"></th>
+            <th class="ca-col-image"></th>
             <th>Title</th>
             <th>Set</th>
             <th>Squares</th>
@@ -37,6 +38,9 @@
                             <img src="{{asset('storage/'.$building->image)}}" width="50">
                         </div>
                     @endif
+                </td>
+                <td>
+                    @include ('layout.maps.static', ['grid' => $building->grid(), 'building' => $building->id])
                 </td>
                 <td>
                     {{$building->title}}
