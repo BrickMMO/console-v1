@@ -18,7 +18,7 @@
 
         @include ('layout.forms.select', ['name' => 'hub_id', 'label' => 'Hub', 'options' => $hubs, 'type' => 'table'])
 
-        @include ('layout.forms.button', ['label' => 'Add Building'])
+        @include ('layout.forms.button', ['label' => 'Add Brain'])
 
     </form>
 

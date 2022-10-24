@@ -8,7 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 use App\Models\Brain;
+use App\Models\BrainPort;
 use App\Models\Hub;
+use App\Models\HubFunction  ;
+use App\Models\HubPort;
 use App\Models\Building;
 use App\Models\Map;
 
@@ -42,7 +45,17 @@ class BrainController extends Controller
             'hub_id' => 'required',
         ]);
 
-        Brain::create($attributes);
+        $brain = Brain::create($attributes);
+
+        $hub = Hub::find($brain->hub_id);
+
+        foreach($hub->ports as $key => $value)
+        {
+            $brainPort = new BrainPort();
+            $brainPort->brain_id = $brain->id;
+            $brainPort->hub_port_id = $value->id;
+            $brainPort->save();
+        }
 
         return redirect('/brains/list')
             ->with('message', 'Brain has been added!');
@@ -69,6 +82,23 @@ class BrainController extends Controller
             'hub_id' => 'required',
         ]);
 
+        if($brain->hub_id != $attributes['hub_id'])
+        {
+
+            BrainPort::where('brain_id', $brain->id)->delete();
+
+            $hub = Hub::find($attributes['hub_id']);
+
+            foreach($hub->ports as $key => $value)
+            {
+                $brainPort = new BrainPort();
+                $brainPort->brain_id = $brain->id;
+                $brainPort->hub_port_id = $value->id;
+                $brainPort->save();
+            }
+                
+        }
+
         $brain->update($attributes);
 
         return redirect('/brains/list')
@@ -80,6 +110,8 @@ class BrainController extends Controller
     {
         
         Storage::delete($brain->image);
+
+        BrainPort::where('brain_id', $brain->id)->delete();
         
         $brain->delete();
 
@@ -91,24 +123,26 @@ class BrainController extends Controller
     public function portsForm(Brain $brain)
     {
 
-        return view('brains.edit', [
+        $ports = BrainPort::where('brain_id', $brain->id)->orderBy('id')->get();
+        $functions = HubFunction::orderBy('title')->get();
+
+        return view('brains.ports', [
             'brain' => $brain,
-            'maps' => Map::all(),
-            'hubs' => Hub::all(),
+            'brainPorts' => $ports,
+            'functions' => $functions,
         ]);
 
     }
 
-    public function ports(Brain $brain)
+    public function ports(Brain $brain, Request $request)
     {
 
-        $attributes = request()->validate([
-            'title' => 'required',
-            'map_id' => 'required',
-            'hub_id' => 'required',
-        ]);
-
-        $brain->update($attributes);
+        foreach($request->function_id as $key => $value)
+        {
+            $brainPort = BrainPort::find($key);
+            $brainPort->hub_function_id = $value;
+            $brainPort->save();
+        }
 
         return redirect('/brains/list')
             ->with('message', 'Brain has been edited!');

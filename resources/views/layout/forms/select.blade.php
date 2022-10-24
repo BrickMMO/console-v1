@@ -5,6 +5,9 @@
     @if (($type ?? false) == 'table')
     
         <select name="{{$name}}" id="{{$name}}" required class="w3-input w3-border">
+            @isset ($blank)
+                <option value=""></option>
+            @endisset
             @foreach ($options as $option)
                 <option value="{{$option->id}}"
                     {{$option->id == old($name, $selected ?? false) ? 'selected' : ''}}>

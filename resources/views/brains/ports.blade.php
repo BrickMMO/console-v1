@@ -8,16 +8,23 @@
 
     @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Brain: '.$brain->title])
 
-    <form method="post" action="/brains/edit/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/brains/ports/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 
-        @include ('layout.forms.text', ['name' => 'title', 'value' => $brain->title])
+        @foreach ($brainPorts as $brainPort)
 
-        @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table', 'selected' => $brain->map_id])
+            @include ('layout.forms.select', [
+                'name' => 'function_id['.$brainPort->id.']', 
+                'label' => 'Port '.$brainPort->hubPort->title.' ('.$brainPort->hubPort->function.')', 
+                'options' => $functions, 
+                'type' => 'table', 
+                'selected' => $brainPort->hub_function_id, 
+                'blank' => true])
 
-        @include ('layout.forms.select', ['name' => 'hub_id', 'label' => 'Hub', 'options' => $hubs, 'type' => 'table', 'selected' => $brain->hub_id])
+        @endforeach
 
+        
         @include ('layout.forms.button', ['label' => 'Edit Brain'])
 
     </form>

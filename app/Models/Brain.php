@@ -13,7 +13,7 @@ class Brain extends Model
     protected $fillable = [
         'title',
         'map_id',
-        'brain_type_id',
+        'hub_id',
         'published_at',
     ];
 
@@ -25,6 +25,11 @@ class Brain extends Model
     public function map()
     {
         return $this->belongsTo(Map::class);
+    }
+
+    public function ports()
+    {
+        return $this->belongsToMany(HubPorts::class, 'brain_ports', 'user_id', 'role_id');
     }
 
 }
