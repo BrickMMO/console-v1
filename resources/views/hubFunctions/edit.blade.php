@@ -4,17 +4,17 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Edit Brain Function'])
+    @include ('layout.title', ['title' => 'Edit Function'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list', 'Manage Brain Functions' => '/brains/functions/list'], 'title' => 'Edit Brain Function: '.$brainFunction->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Hubs' => '/hubs/list', 'Manage Functions' => '/hubs/functions/list'], 'title' => 'Edit Function: '.$hubFunction->title])
 
-    <form method="post" action="/brains/functions/edit/{{$brainFunction->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/hubs/functions/edit/{{$hubFunction->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 
-        @include ('layout.forms.text', ['name' => 'title', 'value' => $brainFunction->title])
+        @include ('layout.forms.text', ['name' => 'title', 'value' => $hubFunction->title])
 
-        @include ('layout.forms.button', ['label' => 'Edit Brain Function'])
+        @include ('layout.forms.button', ['label' => 'Edit Function'])
 
     </form>
 

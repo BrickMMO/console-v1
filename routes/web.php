@@ -95,13 +95,13 @@ Route::post('/hubs/ports/edit/{hubPort:id}', [HubPortController::class, 'edit'])
 Route::get('/hubs/ports/delete/{hubPort:id}', [HubPortController::class, 'delete'])->where('hubPort', '[0-9]+')->middleware('auth');
 Route::get('/hubs/ports/delete/image/{hubPort:id}', [HubPortController::class, 'deleteImage'])->where('hubPort', '[0-9]+')->middleware('auth');
 
-Route::get('/hubs/functions/list', [BrainFunctionController::class, 'list'])->middleware('auth');
-Route::get('/hubs/functions/add', [BrainFunctionController::class, 'addForm'])->middleware('auth');
-Route::post('/hubs/functions/add', [BrainFunctionController::class, 'add'])->middleware('auth');
-Route::get('/hubs/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'editForm'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::post('/hubs/functions/edit/{brainFunction:id}', [BrainFunctionController::class, 'edit'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::get('/hubs/functions/delete/{brainFunction:id}', [BrainFunctionController::class, 'delete'])->where('brainFunction', '[0-9]+')->middleware('auth');
-Route::get('/hubs/functions/delete/image/{brainFunction:id}', [BrainFunctionController::class, 'deleteImage'])->where('brainFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/list', [HubFunctionController::class, 'list'])->middleware('auth');
+Route::get('/hubs/functions/add', [HubFunctionController::class, 'addForm'])->middleware('auth');
+Route::post('/hubs/functions/add', [HubFunctionController::class, 'add'])->middleware('auth');
+Route::get('/hubs/functions/edit/{hubFunction:id}', [HubFunctionController::class, 'editForm'])->where('hubFunction', '[0-9]+')->middleware('auth');
+Route::post('/hubs/functions/edit/{hubFunction:id}', [HubFunctionController::class, 'edit'])->where('hubFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/delete/{hubFunction:id}', [HubFunctionController::class, 'delete'])->where('hubFunction', '[0-9]+')->middleware('auth');
+Route::get('/hubs/functions/delete/image/{hubFunction:id}', [HubFunctionController::class, 'deleteImage'])->where('hubFunction', '[0-9]+')->middleware('auth');
 
 
 
