@@ -22,8 +22,8 @@ class CreateBuildingsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->string('set_num')->nullable();
             $table->string('color')->nullable();
-            $table->foreignIdFor(Map::class);
             $table->string('image')->nullable();
+            $table->foreignIdFor(Map::class);
             $table->timestamps();
         });
     }

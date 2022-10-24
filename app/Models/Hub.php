@@ -14,9 +14,9 @@ class Hub extends Model
 
     protected $fillable = [
         'title',
+        'image',
         'set_num',
         'part_num',
-        'image',
     ];
 
     public function brains()

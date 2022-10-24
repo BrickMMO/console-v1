@@ -13,6 +13,7 @@ class BrainPort extends Model
 
     protected $fillable = [
         'json',
+        'settings',
         'brain_id',
         'hub_port_id',
         'hub_function_id',

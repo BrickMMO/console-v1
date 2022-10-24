@@ -15,8 +15,8 @@ class Building extends Model
         'subtitle',
         'set_num',
         'color',
-        'map_id',
         'image',
+        'map_id',
         'published_at',
     ];
 
