@@ -18,12 +18,49 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/brains', function () {
+Route::get('/brains', function (Request $request) {
 
-    $brains = Brain::all();
+    $result['status'] = 'success';
+    $result['ip'] = $request->ip();
 
-    return $brains;
+    $result['data'] = Brain::all();
 
+    return $result;
+
+
+});
+
+Route::get('/whoami', function (Request $request) {
+
+    $brain = Brain::where('ip', $request->ip())->first();
+
+    $result['ip'] = $request->ip();
+
+    if ($brain) 
+    {
+        $result['status'] = 'success';
+        $result['data'] = $brain;
+    }
+    else
+    {
+        $result['status'] = 'error';
+        $result['data'] = array();
+    }
+
+    return $result;
+
+});
+
+Route::get('/brain/{brain?}', function (Brain $brain, Request $request) {
+
+    $result['ip'] = $request->ip();
+
+    $result['status'] = 'success';
+    $result['data']['brain'] = $brain;
+    $result['data']['hub'] = $brain->hub;
+    $result['data']['ports'] = $brain->brainPorts;
+
+    return $result;
 
 });
 

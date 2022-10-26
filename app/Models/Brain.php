@@ -28,9 +28,9 @@ class Brain extends Model
         return $this->belongsTo(Map::class);
     }
 
-    public function ports()
+    public function brainPorts()
     {
-        return $this->belongsToMany(HubPorts::class, 'brain_ports', 'user_id', 'role_id');
+        return $this->hasMany(BrainPort::class);
     }
 
 }
