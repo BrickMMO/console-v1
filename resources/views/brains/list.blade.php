@@ -50,6 +50,8 @@
                         Hub: {{$brain->hub->title}}
                         <br>
                         Map: {{$brain->map->title}}
+                        <br>
+                        IP Address: {{$brain->ip}}
                     </small>
                 </td>
                 <td>

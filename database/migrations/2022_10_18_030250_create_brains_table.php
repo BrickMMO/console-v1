@@ -19,6 +19,7 @@ class CreateBrainsTable extends Migration
         Schema::create('brains', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('ip')->nullable();
             $table->foreignIdFor(Hub::class);
             $table->foreignIdFor(Map::class);
             $table->timestamps();

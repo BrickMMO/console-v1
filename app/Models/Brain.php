@@ -12,6 +12,7 @@ class Brain extends Model
 
     protected $fillable = [
         'title',
+        'ip',
         'map_id',
         'hub_id',
         'published_at',

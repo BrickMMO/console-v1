@@ -41,6 +41,7 @@ class BrainController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
+            'ip' => 'nullable',
             'map_id' => 'required',
             'hub_id' => 'required',
         ]);
@@ -78,6 +79,7 @@ class BrainController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
+            'ip' => 'nullable',
             'map_id' => 'required',
             'hub_id' => 'required',
         ]);

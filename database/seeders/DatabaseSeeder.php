@@ -210,6 +210,22 @@ class DatabaseSeeder extends Seeder
                     'B' => 'Input/Output',
                 ),
             ),
+            array(
+                'title' => 'BrickPi',
+                'set_num' => '',
+                'part_num' => '',
+                'image' => 'brickpi.jpg',
+                'ports' => array(
+                    'S1' => 'Input',
+                    'S2' => 'Input',
+                    'S3' => 'Input',
+                    'S4' => 'Input',
+                    'M1' => 'Output',
+                    'M2' => 'Output',
+                    'M3' => 'Output',
+                    'M4' => 'Output',
+                ),
+            ),
         );
 
         foreach($hubs as $key => $value)
@@ -258,6 +274,7 @@ class DatabaseSeeder extends Seeder
         $brains = array(
             array(
                 'title' => 'Brain 001 - Lights 001',
+                'ip' => '100.100.100.100',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -277,6 +294,7 @@ class DatabaseSeeder extends Seeder
         {
             $brain = new Brain();
             $brain->title = $value['title'];
+            $brain->ip = $value['ip'];
             $brain->hub_id = $value['hub_id'];
             $brain->map_id = $value['map_id'];
             $brain->save();
