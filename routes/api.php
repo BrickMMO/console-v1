@@ -3,17 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Article;
-use App\Models\Assignment;
-use App\Models\Course;
-use App\Models\Evaluation;
-use App\Models\Meme;
-use App\Models\Page;
-use App\Models\Social;
-use App\Models\Tag;
-use App\Models\Tool;
-use App\Models\ToolType;
-use App\Models\Topic;
+use App\Models\Brain;
 
 use Carbon\Carbon;
 
@@ -28,46 +18,17 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/articles/{filter?}/{value?}', function ($filter, $value) {
+Route::get('/brains', function () {
 
-    if ($filter == 'type' and $value) 
-    {
-        $articles = Article::where('article_type_id', $value)->orderBy('published_at', 'DESC')->get();
-    }
-    elseif ($filter and $value)
-    {
-        $articles = Article::where($filter, $value)->orderBy('published_at', 'DESC')->get();
-    }
-    else
-    {
-        $articles = Article::all();
-    }
+    $brains = Brain::all();
 
-    foreach($articles as $key => $article)
-    {
-        if ($articles[$key]->image)
-        {
-            $articles[$key]->image = env('APP_URL') . 'storage/' . $articles[$key]->image;
-        }
-        if ($articles[$key]->resources)
-        {
-            $resources = preg_split('/\r\n|\n\r|\r|\n|,/', $articles[$key]->resources);
-            $newResources = array();
-
-            for($i = 0; $i < count($resources); $i += 2)
-            {
-                $newResources[] = array('name' => $resources[$i], 'url' => $resources[$i + 1]);
-            }
-            $articles[$key]->resources = $newResources;
-        }
-    }
-
-    return $articles;
+    return $brains;
 
 
-})->where('filter', 'type|home')->where('value', 'yes|no|[0-9]+');
+});
 
 
+/*
 
 Route::get('/evaluations', function () {
 
@@ -301,3 +262,5 @@ Route::get('/courses', function () {
     return $courses;
 
 });
+
+*/
