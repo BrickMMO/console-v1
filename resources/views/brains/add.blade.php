@@ -14,6 +14,8 @@
 
         @include ('layout.forms.text', ['name' => 'title'])
 
+        @include ('layout.forms.text', ['name' => 'ip', 'label' => 'IP Address'])
+
         @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table'])
 
         @include ('layout.forms.select', ['name' => 'hub_id', 'label' => 'Hub', 'options' => $hubs, 'type' => 'table'])

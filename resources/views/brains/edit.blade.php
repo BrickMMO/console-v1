@@ -14,6 +14,8 @@
 
         @include ('layout.forms.text', ['name' => 'title', 'value' => $brain->title])
 
+        @include ('layout.forms.text', ['name' => 'ip', 'label' => 'IP Address', 'value' => $brain->ip])
+
         @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table', 'selected' => $brain->map_id])
 
         @include ('layout.forms.select', ['name' => 'hub_id', 'label' => 'Hub', 'options' => $hubs, 'type' => 'table', 'selected' => $brain->hub_id])
