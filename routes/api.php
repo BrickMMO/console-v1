@@ -58,10 +58,14 @@ Route::get('/brain/{brain?}', function (Brain $brain, Request $request) {
 
     $hub = Hub::where('id', $brain->hub_id)->first();
 
+    $hub->hubPorts;
+    $brain->brainPorts;
+
     $result['status'] = 'success';
+    $result['data']['hub'] = $hub;
+    
     $result['data']['brain'] = $brain;
-    $result['data']['hub'] = $brain->hub;
-    $result['data']['ports'] = $hub->hubPorts;
+    
 
     return $result;
 
