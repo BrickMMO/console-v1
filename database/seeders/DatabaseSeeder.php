@@ -128,6 +128,44 @@ class DatabaseSeeder extends Seeder
                 'image' => 'boutique.jpg',
                 'squares' => array(45,46,57,58),
             ),
+
+
+            array(
+                'title' => 'The Pig House Hotel',
+                'subtitle' => '',
+                'set_num' => '21170',
+                'color' => 'F4BBDE',
+                'image' => 'pig.jpg',
+                'squares' => array(81,82),
+            ),array(
+                'title' => 'Bookshop',
+                'subtitle' => 'Birch Books',
+                'set_num' => '10270',
+                'color' => 'CD9773',
+                'image' => 'birch.jpg',
+                'squares' => array(69,70),
+            ),array(
+                'title' => 'Bookshop',
+                'subtitle' => 'Townhouse',
+                'set_num' => '10270',
+                'color' => '57B9BB',
+                'image' => 'townhouse.jpg',
+                'squares' => array(),
+            ),array(
+                'title' => 'Winnie the Pooh',
+                'subtitle' => '',
+                'set_num' => '21326',
+                'color' => 'C11314',
+                'image' => 'winnie.jpg',
+                'squares' => array(),
+            ),array(
+                'title' => 'Police Station',
+                'subtitle' => '',
+                'set_num' => '10278',
+                'color' => 'DAC083',
+                'image' => 'police.jpg',
+                'squares' => array(55,56,67,68),
+            ),
         );
 
         foreach($buildings as $key => $value)
