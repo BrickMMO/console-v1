@@ -24,7 +24,7 @@ class Hub extends Model
         return $this->hasMany(Brain::class);
     }
 
-    public function ports()
+    public function hubPorts()
     {
         return $this->hasMany(HubPort::class);
     }

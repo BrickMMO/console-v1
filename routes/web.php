@@ -9,7 +9,9 @@ use App\Http\Controllers\HubPortController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
 
+Use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/logout', [ConsoleController::class, 'logout'])->middleware('auth');
 Route::get('/', [ConsoleController::class, 'loginForm'])->middleware('guest')->name('login');
 Route::post('/', [ConsoleController::class, 'login'])->middleware('guest');
-Route::get('/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth');
+Route::get('/dashboard', [ConsoleController::class, 'dashboard'])->middleware('auth')->name('dashboard');
 
 Route::get('/users/list', [UserController::class, 'list'])->middleware('auth');
 Route::get('/users/add', [UserController::class, 'addForm'])->middleware('auth');
@@ -94,3 +96,8 @@ Route::get('/hubs/functions/edit/{hubFunction:id}', [HubFunctionController::clas
 Route::post('/hubs/functions/edit/{hubFunction:id}', [HubFunctionController::class, 'edit'])->where('hubFunction', '[0-9]+')->middleware('auth');
 Route::get('/hubs/functions/delete/{hubFunction:id}', [HubFunctionController::class, 'delete'])->where('hubFunction', '[0-9]+')->middleware('auth');
 Route::get('/hubs/functions/delete/image/{hubFunction:id}', [HubFunctionController::class, 'deleteImage'])->where('hubFunction', '[0-9]+')->middleware('auth');
+
+if (env('APP_ENV') === 'production' && !request()->secure()) {
+    // URL::forceScheme('https');
+    // Redirect::route('dashboard');
+}

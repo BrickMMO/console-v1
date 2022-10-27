@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Brain;
+use App\Models\Hub;
 
 use Carbon\Carbon;
 
@@ -55,10 +56,12 @@ Route::get('/brain/{brain?}', function (Brain $brain, Request $request) {
 
     $result['ip'] = $request->ip();
 
+    $hub = Hub::where('id', $brain->hub_id)->first();
+
     $result['status'] = 'success';
     $result['data']['brain'] = $brain;
     $result['data']['hub'] = $brain->hub;
-    $result['data']['ports'] = $brain->brainPorts;
+    $result['data']['ports'] = $hub->hubPorts;
 
     return $result;
 

@@ -316,9 +316,9 @@ class DatabaseSeeder extends Seeder
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
-                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '[{"buildings" => [1, 2, 3, 4, 5]}]', 'settings' => '[{"status" => "on"}]'),
-                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '[{"buildings" => [6]}]', 'settings' => '[{"status" => "off"}]'),
-                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '[{"building" => 2}]', 'settings' => '[{"status" => "off"}]'),
+                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '[{"buildings" : [1, 2, 3, 4, 5]}]', 'settings' => '[{"status" : "on"}]'),
+                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '[{"buildings" : [6]}]', 'settings' => '[{"status" : "off"}]'),
+                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '[{"building" : 2}]', 'settings' => '[{"status" : "off"}]'),
                     array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
