@@ -6,7 +6,7 @@
 
     @include ('layout.title', ['title' => 'Edit Port Settings'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Settings: '.$brain->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Edit Port Settings: '.$brain->title])
 
     <form method="post" action="/brains/settings/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 

@@ -4,9 +4,9 @@
 
 <section class="w3-padding ca-container-small">
 
-    @include ('layout.title', ['title' => 'Edit Ports'])
+    @include ('layout.title', ['title' => 'Edit Port JSON'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Port JSON: '.$brain->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Edit Port JSON: '.$brain->title])
 
     <form method="post" action="/brains/json/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 

@@ -6,7 +6,7 @@
 
     @include ('layout.title', ['title' => 'Edit Brain'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Brain' => '/brains/list'], 'title' => 'Edit Brain: '.$brain->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Brains' => '/brains/list'], 'title' => 'Edit Brain: '.$brain->title])
 
     <form method="post" action="/brains/edit/{{$brain->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
