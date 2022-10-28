@@ -299,6 +299,9 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Weasley\'s Hat',
             ),
+            array(
+                'title' => 'Dagobah™ Swamp',
+            ),
         );
 
         foreach($functions as $key => $value)
@@ -317,9 +320,9 @@ class DatabaseSeeder extends Seeder
                 'map_id' => 1,
                 'ports' => array(
                     array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '[{"buildings" : [1, 2, 3, 4, 5]}]', 'settings' => '[{"status" : "on"}]'),
-                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '[{"buildings" : [6]}]', 'settings' => '[{"status" : "off"}]'),
-                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '[{"building" : 2}]', 'settings' => '[{"status" : "off"}]'),
-                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '[{"buildings" : [6]}]', 'settings' => '[{"status" : "on"}]'),
+                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '[{"building" : 2}]', 'settings' => '[{"status" : "on"}]'),
+                    array('hub_port_id' => '4', 'hub_function_id' => 3, 'json' => '[{"building" : 4}]', 'settings' => '[{"status" : "on"}]'),
                     array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
