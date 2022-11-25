@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         // Add first map
         $map = new Map();
         $map->title = "LEGO City - Version 1";
-        $map->width = 12;
+        $map->width = 15;
         $map->height = 9;
         $map->save();
 
@@ -63,15 +63,15 @@ class DatabaseSeeder extends Seeder
 
         // Add squares for first map
         $squares = array(
-            array(2,2,2,2,2,2,2,2,2,2,2,2),
-            array(1,1,1,1,1,1,1,1,1,1,1,1),
-            array(1,1,1,1,1,1,1,1,1,1,1,1),
-            array(1,1,2,2,1,1,2,2,2,2,1,1),
-            array(1,1,2,2,1,1,2,2,2,2,1,1),
-            array(1,1,2,2,1,1,2,2,2,2,1,1),
-            array(1,1,2,2,1,1,2,2,2,2,1,1),
-            array(1,1,1,1,1,1,1,1,1,1,1,1),
-            array(1,1,1,1,1,1,1,1,1,1,1,1),
+            array(2,2,2,2,2,2,2,2,2,2,2,2,2,2,2),
+            array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+            array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+            array(1,1,2,2,2,2,2,1,1,2,2,2,2,1,1),
+            array(1,1,2,2,2,2,2,1,1,2,2,2,2,1,1),
+            array(1,1,2,2,2,2,2,1,1,2,2,2,2,1,1),
+            array(1,1,2,2,2,2,2,1,1,2,2,2,2,1,1),
+            array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
+            array(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),
         );
 
         foreach($squares as $key => $value)
@@ -105,21 +105,21 @@ class DatabaseSeeder extends Seeder
                 'set_num' => '75798',
                 'color' => '6D8E6E',
                 'image' => 'quidditch.jpg',
-                'squares' => array(7,8),
+                'squares' => array(10,11),
             ),array(
                 'title' => 'Dagobah™ Jedi™ Training Diorama',
                 'subtitle' => '',
                 'set_num' => '75330',
                 'color' => 'D7AE71',
                 'image' => 'jedi.jpg',
-                'squares' => array(9,10),
+                'squares' => array(12,13),
             ),array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Ollivanders™ Wandshop & Scribbulus',
                 'set_num' => '75798',
                 'color' => '003E62',
                 'image' => 'wand.jpg',
-                'squares' => array(11,12),
+                'squares' => array(14,15),
             ),array(
                 'title' => 'Boutique Hotel',
                 'subtitle' => '',
@@ -128,8 +128,6 @@ class DatabaseSeeder extends Seeder
                 'image' => 'boutique.jpg',
                 'squares' => array(45,46,57,58),
             ),
-
-
             array(
                 'title' => 'The Pig House Hotel',
                 'subtitle' => '',
