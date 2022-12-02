@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
                 'squares' => array(87,88,102,103),
             ),
             array(
-                'title' => 'The Pig House Hotel',
+                'title' => 'The Pig House',
                 'subtitle' => '',
                 'set_num' => '21170',
                 'color' => 'F4BBDE',
