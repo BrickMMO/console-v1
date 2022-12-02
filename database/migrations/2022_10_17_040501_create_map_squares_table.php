@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\Building;
 use App\Models\Map;
 use App\Models\MapType;
+use App\Models\Road;
 
 class CreateMapSquaresTable extends Migration
 {
@@ -24,6 +25,7 @@ class CreateMapSquaresTable extends Migration
             $table->integer('y');
             $table->string('directions')->nullable();
             $table->foreignIdFor(Building::class)->nullable();
+            $table->foreignIdFor(Road::class)->nullable();
             $table->foreignIdFor(Map::class);
             $table->foreignIdFor(MapType::class);
         });
