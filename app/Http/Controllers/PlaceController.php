@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
-use App\Models\Building;
+use App\Models\Place;
 
-class BuildingController extends Controller
+class PlaceController extends Controller
 {
     public function list()
     {

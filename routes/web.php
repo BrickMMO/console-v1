@@ -7,6 +7,7 @@ use App\Http\Controllers\HubController;
 use App\Http\Controllers\HubFunctionController;
 use App\Http\Controllers\HubPortController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\UserController;
 
 Use Illuminate\Support\Facades\Redirect;
@@ -57,6 +58,13 @@ Route::get('/buildings/image/{building:id}', [BuildingController::class, 'imageF
 Route::post('/buildings/image/{building:id}', [BuildingController::class, 'image'])->where('building', '[0-9]+')->middleware('auth');
 Route::get('/buildings/squares/{building:id}', [BuildingController::class, 'squaresForm'])->where('building', '[0-9]+')->middleware('auth');
 Route::post('/buildings/squares/{building:id}', [BuildingController::class, 'squares'])->where('building', '[0-9]+')->middleware('auth');
+
+Route::get('/places/list', [PlaceController::class, 'list'])->middleware('auth');
+Route::get('/places/add', [PlaceController::class, 'addForm'])->middleware('auth');
+Route::post('/places/add', [PlaceController::class, 'add'])->middleware('auth');
+Route::get('/places/edit/{building:id}', [PlaceController::class, 'editForm'])->where('place', '[0-9]+')->middleware('auth');
+Route::post('/places/edit/{building:id}', [PlaceController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
+Route::get('/places/delete/{building:id}', [PlaceController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');
 
 Route::get('/brains/list', [BrainController::class, 'list'])->middleware('auth');
 Route::get('/brains/add', [BrainController::class, 'addForm'])->middleware('auth');
