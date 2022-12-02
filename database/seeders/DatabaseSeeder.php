@@ -41,6 +41,14 @@ class DatabaseSeeder extends Seeder
         $user->password = "password";
         $user->save();
 
+        // Add testing user
+        $user = new User();
+        $user->first = "First";
+        $user->last = "Last";
+        $user->email = "email@address.com";
+        $user->password = "password";
+        $user->save();
+
         // Add first map
         $map = new Map();
         $map->title = "LEGO City - Version 1";
@@ -341,15 +349,95 @@ class DatabaseSeeder extends Seeder
         // Brains
         $brains = array(
             array(
-                'title' => 'Brain 001 - Lights 001',
-                'ip' => '100.100.100.100',
+                'title' => 'Mike',
+                'ip' => '10.12.1.13',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
                     array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '{"buildings" : [1, 2, 3, 4, 5]}', 'settings' => '{"status" : "on"}'),
-                    array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '{"buildings" : [6]}', 'settings' => '{"status" : "on"}'),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
-                    array('hub_port_id' => '4', 'hub_function_id' => 3, 'json' => '{"building" : 4}', 'settings' => '{"status" : "on"}'),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                ),
+            ),
+            array(
+                'title' => 'November',
+                'ip' => '10.12.1.14',
+                'hub_id' => 1,
+                'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '{"buildings" : [1, 2, 3, 4, 5]}', 'settings' => '{"status" : "on"}'),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                ),
+            ),
+            array(
+                'title' => 'Oscar',
+                'ip' => '10.12.1.15',
+                'hub_id' => 1,
+                'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                ),
+            ),
+            array(
+                'title' => 'Papa',
+                'ip' => '10.12.1.16',
+                'hub_id' => 1,
+                'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                ),
+            ),
+            array(
+                'title' => 'Quebec',
+                'ip' => '10.12.1.17',
+                'hub_id' => 1,
+                'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                ),
+            ),
+            array(
+                'title' => 'Romeo',
+                'ip' => '10.12.1.18',
+                'hub_id' => 1,
+                'map_id' => 1,
+                'ports' => array(
+                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
