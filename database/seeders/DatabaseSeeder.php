@@ -98,6 +98,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Flourish & Blotts & Florean Fortescue\'s Ice Cream Parlor',
                 'set_num' => '75798',
                 'color' => '6D8E6E',
+                'width' => 2,
+                'height' => 1,
                 'image' => 'blotts.jpg',
                 'squares' => array(1,2),
             ),array(
@@ -105,6 +107,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Weasley\'s Wizard Wheezes & Knockturn Alley',
                 'set_num' => '75798',
                 'color' => 'E9C9FF',
+                'width' => 2,
+                'height' => 1,
                 'image' => 'wizard.jpg',
                 'squares' => array(3,4),
             ),array(
@@ -112,6 +116,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Quality Quidditch™ Supplies & The Daily Prophet™',
                 'set_num' => '75798',
                 'color' => '6D8E6E',
+                'width' => 2,
+                'height' => 1,
                 'image' => 'quidditch.jpg',
                 'squares' => array(10,11),
             ),array(
@@ -119,6 +125,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '75330',
                 'color' => 'D7AE71',
+                'width' => 2,
+                'height' => 1,
                 'image' => 'jedi.jpg',
                 'squares' => array(12,13),
             ),array(
@@ -126,6 +134,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Ollivanders™ Wandshop & Scribbulus',
                 'set_num' => '75798',
                 'color' => '003E62',
+                'width' => 2,
+                'height' => 1,
                 'image' => 'wand.jpg',
                 'squares' => array(14,15),
             ),array(
@@ -133,6 +143,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '10297',
                 'color' => 'BE6A33',
+                'width' => 2,
+                'height' => 2,
                 'image' => 'boutique.jpg',
                 'squares' => array(87,88,102,103),
             ),
@@ -141,6 +153,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '21170',
                 'color' => 'F4BBDE',
+                'width' => 1,
+                'height' => 2,
                 'image' => 'pig.jpg',
                 'squares' => array(85,100),
             ),array(
@@ -148,6 +162,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Birch Books',
                 'set_num' => '10270',
                 'color' => 'CD9773',
+                'width' => 1,
+                'height' => 2,
                 'image' => 'birch.jpg',
                 'squares' => array(86,101),
             ),array(
@@ -155,6 +171,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => 'Townhouse',
                 'set_num' => '10270',
                 'color' => '57B9BB',
+                'width' => 1,
+                'height' => 2,
                 'image' => 'townhouse.jpg',
                 'squares' => array(56,71),
             ),array(
@@ -162,6 +180,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '21326',
                 'color' => 'C11314',
+                'width' => 2,
+                'height' => 2,
                 'image' => 'winnie.jpg',
                 'squares' => array(51,52,66,67),
             ),array(
@@ -169,6 +189,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '10278',
                 'color' => 'DAC083',
+                'width' => 2,
+                'height' => 2,
                 'image' => 'police.jpg',
                 'squares' => array(49,50,64,65),
             ),array(
@@ -182,7 +204,9 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Mos Eisley Cantina™',
                 'subtitle' => 'Tatooine Dwelling #2',
                 'set_num' => '75290',
-                'color' => 'DFCC93',    
+                'color' => 'DFCC93',
+                'width' => 1,
+                'height' => 2,
                 'image' => 'dwelling-2.png',
                 'squares' => array(55,70),
             ),
