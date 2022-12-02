@@ -148,21 +148,21 @@ class DatabaseSeeder extends Seeder
                 'set_num' => '10270',
                 'color' => '57B9BB',
                 'image' => 'townhouse.jpg',
-                'squares' => array(50,65),
+                'squares' => array(56,71),
             ),array(
                 'title' => 'Winnie the Pooh',
                 'subtitle' => '',
                 'set_num' => '21326',
                 'color' => 'C11314',
                 'image' => 'winnie.jpg',
-                'squares' => array(48,49,63,64),
+                'squares' => array(51,52,66,67),
             ),array(
                 'title' => 'Police Station',
                 'subtitle' => '',
                 'set_num' => '10278',
                 'color' => 'DAC083',
                 'image' => 'police.jpg',
-                'squares' => array(56,57,71,72),
+                'squares' => array(49,50,64,65),
             ),array(
                 'title' => 'Assembly Square',
                 'subtitle' => '',
@@ -170,6 +170,13 @@ class DatabaseSeeder extends Seeder
                 'color' => '5F6C7C',
                 'image' => 'square.jpg',
                 'squares' => array(79,80,81,94,95,96),
+            ),array(
+                'title' => 'Mos Eisley Cantina™',
+                'subtitle' => 'Tatooine Dwelling #2',
+                'set_num' => '75290',
+                'color' => 'DFCC93',    
+                'image' => 'dwelling-2.png',
+                'squares' => array(55,70),
             ),
         );
 
@@ -307,6 +314,21 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Dagobah™ Swamp',
             ),
+            array(
+                'title' => '12 Grimmuald Place',
+            ),
+            array(
+                'title' => 'Christmas Tree',
+            ),
+            array(
+                'title' => 'In finity Gauntlet',
+            ),
+            array(
+                'title' => 'Loop Coaster',
+            ),
+            array(
+                'title' => 'Magestic Tiger',
+            ),
         );
 
         foreach($functions as $key => $value)
@@ -326,7 +348,7 @@ class DatabaseSeeder extends Seeder
                 'ports' => array(
                     array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '{"buildings" : [1, 2, 3, 4, 5]}', 'settings' => '{"status" : "on"}'),
                     array('hub_port_id' => '2', 'hub_function_id' => 1, 'json' => '{"buildings" : [6]}', 'settings' => '{"status" : "on"}'),
-                    array('hub_port_id' => '3', 'hub_function_id' => 2, 'json' => '{"building" : 2}', 'settings' => '{"status" : "on"}'),
+                    array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '4', 'hub_function_id' => 3, 'json' => '{"building" : 4}', 'settings' => '{"status" : "on"}'),
                     array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),

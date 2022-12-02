@@ -50,7 +50,7 @@ class BrainController extends Controller
 
         $hub = Hub::find($brain->hub_id);
 
-        foreach($hub->ports as $key => $value)
+        foreach($hub->hubPorts as $key => $value)
         {
             $brainPort = new BrainPort();
             $brainPort->brain_id = $brain->id;
@@ -91,7 +91,7 @@ class BrainController extends Controller
 
             $hub = Hub::find($attributes['hub_id']);
 
-            foreach($hub->ports as $key => $value)
+            foreach($hub->hubPorts as $key => $value)
             {
                 $brainPort = new BrainPort();
                 $brainPort->brain_id = $brain->id;
