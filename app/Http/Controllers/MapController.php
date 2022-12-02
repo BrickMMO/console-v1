@@ -39,7 +39,7 @@ class MapController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'width' => 'required|numeric|max:24',
-            'height' => 'required|numeric:posts|max:24',
+            'height' => 'required|numeric|max:24',
         ]);
 
         $map = new Map();
@@ -83,7 +83,7 @@ class MapController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'width' => 'required|numeric|max:24',
-            'height' => 'required|numeric:posts|max:24',
+            'height' => 'required|numeric|max:24',
         ]);
 
         $map->title = $attributes['title'];

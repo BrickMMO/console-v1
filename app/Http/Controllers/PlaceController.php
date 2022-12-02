@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 use App\Models\Place;
+use App\Models\Building;
 
 class PlaceController extends Controller
 {
@@ -36,9 +37,9 @@ class PlaceController extends Controller
             'title' => 'required',
             'address' => 'nullable',
             'x' => 'required|numeric|max:64',
-            'y' => 'required|numeric:posts|max:64',
+            'y' => 'required|numeric|max:64',
             'width' => 'required|numeric|max:64',
-            'height' => 'required|numeric:posts|max:64',
+            'height' => 'required|numeric|max:64',
             'building_id' => 'required',
         ]);
 
@@ -67,9 +68,9 @@ class PlaceController extends Controller
             'title' => 'required',
             'address' => 'nullable',
             'x' => 'required|numeric|max:64',
-            'y' => 'required|numeric:posts|max:64',
+            'y' => 'required|numeric|max:64',
             'width' => 'required|numeric|max:64',
-            'height' => 'required|numeric:posts|max:64',
+            'height' => 'required|numeric|max:64',
             'building_id' => 'required',
         ]);
 

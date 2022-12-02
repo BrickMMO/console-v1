@@ -6,7 +6,7 @@
 
     @include ('layout.title', ['title' => 'Edit Building'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Buildings' => '/buildings/list'], 'title' => 'Edit Building: '.$building->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Building' => '/buildings/list'], 'title' => 'Edit Building: '.$building->title])
 
     <form method="post" action="/buildings/edit/{{$building->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
@@ -15,10 +15,6 @@
         @include ('layout.forms.text', ['name' => 'title', 'value' => $building->title])
 
         @include ('layout.forms.text', ['name' => 'subtitle', 'value' => $building->subtitle])
-
-        @include ('layout.forms.text', ['name' => 'width', 'value' => $building->width])
-
-        @include ('layout.forms.text', ['name' => 'height', 'value' => $building->height])
 
         @include ('layout.forms.text', ['name' => 'color', 'value' => $building->color])
 

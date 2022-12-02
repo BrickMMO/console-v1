@@ -40,7 +40,7 @@ class BuildingController extends Controller
             'set_num' => 'nullable',
             'color' => 'nullable',
             'width' => 'required|numeric|max:10',
-            'height' => 'required|numeric:posts|max:10',
+            'height' => 'required|numeric|max:10',
             'map_id' => 'required',
         ]);
 
@@ -71,7 +71,7 @@ class BuildingController extends Controller
             'set_num' => 'nullable',
             'color' => 'nullable',
             'width' => 'required|numeric|max:10',
-            'height' => 'required|numeric:posts|max:10',
+            'height' => 'required|numeric|max:10',
             'map_id' => 'required',
         ]);
 
