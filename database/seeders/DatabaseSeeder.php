@@ -198,6 +198,8 @@ class DatabaseSeeder extends Seeder
                 'subtitle' => '',
                 'set_num' => '10255',
                 'color' => '5F6C7C',
+                'width' => 3,
+                'height' => 2,
                 'image' => 'square.jpg',
                 'squares' => array(79,80,81,94,95,96),
             ),array(
@@ -222,6 +224,8 @@ class DatabaseSeeder extends Seeder
             $building->subtitle = $value['subtitle'];
             $building->set_num = $value['set_num'];
             $building->color = $value['color'];
+            $building->width = $value['width'];
+            $building->height = $value['height'];
             $building->image = $path;
             $building->map_id = 1;
             $building->save();

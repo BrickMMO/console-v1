@@ -51,6 +51,8 @@
                             <br>
                         @endif
                         Map: {{$building->map->title}}
+                        <br>
+                        Dimensions: {{$building->width}} x {{$building->height}}
                     </small>
                 </td>
                 <td>
