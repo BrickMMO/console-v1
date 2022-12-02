@@ -40,7 +40,9 @@ class ConsoleController extends Controller
     {
         $links = [
             ['icon' => 'fas fa-map', 'text' => 'Maps', 'route' => '/maps/list'],
+            ['icon' => 'fas fa-road', 'text' => 'Roads', 'route' => '/roads/list'],
             ['icon' => 'fas fa-building', 'text' => 'Buildings', 'route' => '/buildings/list'],
+            ['icon' => 'fas fa-map-pin', 'text' => 'Places', 'route' => '/places/list'],
             ['icon' => 'fas fa-brain', 'text' => 'LEGO™ Brains', 'route' => '/brains/list'],
             ['icon' => 'fas fa-server', 'text' => 'Hubs', 'route' => '/hubs/list'],
             
