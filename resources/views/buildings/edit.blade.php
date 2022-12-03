@@ -22,7 +22,7 @@
 
         @include ('layout.forms.text', ['name' => 'color', 'value' => $building->color])
 
-        @include ('layout.forms.text', ['name' => 'set_num', 'value' => $building->set_num])
+        @include ('layout.forms.text', ['name' => 'set_num', 'label' => 'Set Number', 'value' => $building->set_num])
 
         @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table', 'selected' => $building->map_id])
 

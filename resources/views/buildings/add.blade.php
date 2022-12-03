@@ -22,7 +22,7 @@
 
         @include ('layout.forms.text', ['name' => 'set_num'])
 
-        @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Map', 'options' => $maps, 'type' => 'table'])
+        @include ('layout.forms.select', ['name' => 'map_id', 'label' => 'Set Number', 'label' => 'Map', 'options' => $maps, 'type' => 'table'])
 
         @include ('layout.forms.button', ['label' => 'Add Building'])
 
