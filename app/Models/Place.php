@@ -20,7 +20,7 @@ class Place extends Model
         'published_at',
     ];
 
-    public function map()
+    public function building()
     {
         return $this->belongsTo(Building::class);
     }

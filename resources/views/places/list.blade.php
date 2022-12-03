@@ -11,7 +11,6 @@
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
-            <th class="ca-col-image"></th>
             <th>Title</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
@@ -22,24 +21,23 @@
                     {{$place->id}}
                 </td>
                 <td>
-                    @include ('layout.maps.static', ['grid' => $place->grid(), 'building' => $place->id])
-                </td>
-                <td>
                     {{$place->title}}
                     <br>
                     <small>
                         Building: {{$place->building->title}}
                         <br>
+                        Start: Dimensions: {{$place->x}},{{$place->y}}
+                        <br>
                         Dimensions: {{$place->width}} x {{$place->height}}
                     </small>
                 </td>
                 <td>
-                    <a href="/buildings/edit/{{$building->id}}">
+                    <a href="/buildings/edit/{{$place->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/buildings/delete/{{$building->id}}">
+                    <a href="/buildings/delete/{{$place->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>

@@ -17,6 +17,8 @@ use App\Models\HubPort;
 use App\Models\Map;
 use App\Models\MapSquare;
 use App\Models\MapType;
+use App\Models\Place;
+use App\Models\Road;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -237,6 +239,43 @@ class DatabaseSeeder extends Seeder
                 $square->building_id = $id;
                 $square->save();
             }
+            
+        }
+
+        // Places
+        $places = array(
+            array(
+                'title' => 'Ollivanders™ Wand Shop',
+                'address' => '16 Grimmauld Place',
+                'x' => 1,
+                'y' => 1,
+                'width' => 12,
+                'height' => 16,
+                'building_id' => 5,
+            ),
+            array(
+                'title' => 'Scribbulus™ Writing Implements',
+                'address' => '18 Grimmauld Place',
+                'x' => 1,
+                'y' => 13,
+                'width' => 20,
+                'height' => 16,
+                'building_id' => 5,
+            ),   
+        );
+
+        foreach($places as $key => $value)
+        {
+
+            $place = new Place();
+            $place->title = $value['title'];
+            $place->address = $value['address'];
+            $place->x = $value['x'];
+            $place->y = $value['y'];
+            $place->width = $value['width'];
+            $place->height = $value['height'];
+            $place->building_id = 1;
+            $place->save();
             
         }
 
