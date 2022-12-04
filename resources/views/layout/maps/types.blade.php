@@ -9,7 +9,7 @@
 
                 @foreach ($row as $j => $col)
 
-                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;">
+                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;">
 
                         <input type="hidden" name="square[{{$j}}][{{$i}}]" value="{{$col->map_type_id}}">
 
@@ -91,14 +91,10 @@ grid.forEach(function(row, i){
 </script>
 
 <style>
-
 #map-table td {
     border: 1px solid white;
 }
 #map-table td {
-    height: 50px;
-    width: {{round(100/count($grid[0]))}}%;
+    height: 10px;
 }
-
-
 </style>

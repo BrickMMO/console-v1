@@ -24,4 +24,32 @@ class Place extends Model
     {
         return $this->belongsTo(Building::class);
     }
+
+    public function grid()
+    {
+        $building = Building::find($this->building_id);
+        
+        $grid = array();
+
+        for($x = 1; $x <= $building->width * 16; $x ++)
+        {
+            for($y = 1; $y <= $building->height * 16; $y ++)
+            {
+                if(
+                    $x >= $this->x and 
+                    $x < $this->x + $this->width and 
+                    $y >= $this->y and 
+                    $y < $this->y + $this->height)
+                {
+                    $grid[$y][$x] = 'red';
+                }
+                else
+                {
+                    $grid[$y][$x] = 'grey';
+                }
+            }
+        }
+
+        return $grid;
+    }
 }

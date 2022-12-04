@@ -256,8 +256,8 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Scribbulus™ Writing Implements',
                 'address' => '18 Grimmauld Place',
-                'x' => 1,
-                'y' => 13,
+                'x' => 13,
+                'y' => 1,
                 'width' => 20,
                 'height' => 16,
                 'building_id' => 5,

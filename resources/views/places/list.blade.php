@@ -11,6 +11,7 @@
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
+            <th class="ca-col-image"></th>
             <th>Title</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
@@ -21,12 +22,15 @@
                     {{$place->id}}
                 </td>
                 <td>
+                    @include ('layout.maps.place', ['grid' => $place->grid()])
+                </td>
+                <td>
                     {{$place->title}}
                     <br>
                     <small>
                         Building: {{$place->building->title}}
                         <br>
-                        Start: Dimensions: {{$place->x}},{{$place->y}}
+                        Start Coordinates: {{$place->x}},{{$place->y}}
                         <br>
                         Dimensions: {{$place->width}} x {{$place->height}}
                     </small>

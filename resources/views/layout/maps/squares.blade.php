@@ -1,27 +1,27 @@
 
 <div class="w3-margin-bottom">
 
-<table class="w3-table" id="map-table">
+    <table class="w3-table" id="map-table">
 
-    @foreach ($grid as $i => $row)
+        @foreach ($grid as $i => $row)
 
-        <tr>
+            <tr>
 
-            @foreach ($row as $j => $col)
+                @foreach ($row as $j => $col)
 
-                <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;">
+                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;">
 
-                    <input type="hidden" name="squares[{{$col->id}}]" value="{{in_array($col->id, $selected) ? 'on' : 'off'}}" size="3">
+                        <input type="hidden" name="squares[{{$col->id}}]" value="{{in_array($col->id, $selected) ? 'on' : 'off'}}" size="3">
 
-                </td>
+                    </td>
 
-            @endforeach
+                @endforeach
 
-        </tr>
+            </tr>
 
-    @endforeach
+        @endforeach
 
-</table>    
+    </table>    
 
 </div>
 
@@ -83,14 +83,10 @@ grid.forEach(function(row, i){
 </script>
 
 <style>
-
 #map-table td {
     border: 1px solid white;
 }
 #map-table td {
-    height: 50px;
-    width: {{round(100/count($grid[0]))}}%;
+    height: 10px;
 }
-
-
 </style>
