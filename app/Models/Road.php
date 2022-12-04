@@ -11,6 +11,7 @@ class Road extends Model
 
     protected $fillable = [
         'title',
+        'map_id'
     ];
 
     public function map()
