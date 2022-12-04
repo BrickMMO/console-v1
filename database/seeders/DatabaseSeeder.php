@@ -93,6 +93,48 @@ class DatabaseSeeder extends Seeder
             }
         }
 
+        // Roads
+        $roads = array(
+            array(
+                'title' => 'Grimmauld Place',
+                'squares' => array(16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,33,34,35,36,37,38,39,40,41,42,43,44),
+            ),
+            array(
+                'title' => 'Second Horizontal',
+                'squares' => array(107,108,109,110,111,112,113,114,115,116,117,118,119,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135),
+            ),
+            array(
+                'title' => 'First Vert',
+                'squares' => array(31,46,61,76,91,106,47,62,77,92),
+            ),
+            array(
+                'title' => 'Acres Wood',
+                'squares' => array(53,86,83,98,54,69,84,99),
+            ),
+            array(
+                'title' => '39th Street',
+                'squares' => array(59,74,89,104,45,60,75,90,105,120),
+            ),
+        );
+
+        foreach($roads as $key => $value)
+        {
+
+            $road = new Road();
+            $road->title = $value['title'];
+            $road->map_id = 1;
+            $road->save();
+            $id = $road->id;
+
+            foreach($value['squares'] as $key2 => $value2)
+            {
+                $square = MapSquare::find($value2);
+                $square->road_id = $id;
+                $square->save();
+            }
+            
+        }
+
         // Buildings
         $buildings = array(
             array(
@@ -252,6 +294,7 @@ class DatabaseSeeder extends Seeder
                 'width' => 12,
                 'height' => 16,
                 'building_id' => 5,
+                'road_id' => 1,
             ),
             array(
                 'title' => 'Scribbulus™ Writing Implements',
@@ -261,6 +304,7 @@ class DatabaseSeeder extends Seeder
                 'width' => 20,
                 'height' => 16,
                 'building_id' => 5,
+                'road_id' => 1,
             ),   
         );
 
@@ -274,7 +318,8 @@ class DatabaseSeeder extends Seeder
             $place->y = $value['y'];
             $place->width = $value['width'];
             $place->height = $value['height'];
-            $place->building_id = 1;
+            $place->building_id = $value['building_id'];
+            $place->road_id = $value['road_id'];
             $place->save();
             
         }
