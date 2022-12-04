@@ -36,12 +36,12 @@
                     </small>
                 </td>
                 <td>
-                    <a href="/buildings/edit/{{$place->id}}">
+                    <a href="/places/edit/{{$place->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/buildings/delete/{{$place->id}}">
+                    <a href="/places/delete/{{$place->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>

@@ -9,7 +9,7 @@
 
                 @foreach ($row as $j => $col)
 
-                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;">
+                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" data-type="{{$col->map_type_id}}" style="width:{{round(100/count($row),2)}}%;  height: 50px;">
 
                         <input type="hidden" name="square[{{$j}}][{{$i}}]" value="{{$col->map_type_id}}">
 

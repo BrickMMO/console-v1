@@ -17,12 +17,18 @@ class Place extends Model
         'width',
         'height',
         'building_id',
+        'road_id',
         'published_at',
     ];
 
     public function building()
     {
         return $this->belongsTo(Building::class);
+    }
+
+    public function road()
+    {
+        return $this->belongsTo(Road::class);
     }
 
     public function grid()

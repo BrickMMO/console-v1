@@ -66,6 +66,13 @@ Route::get('/places/edit/{building:id}', [PlaceController::class, 'editForm'])->
 Route::post('/places/edit/{building:id}', [PlaceController::class, 'edit'])->where('place', '[0-9]+')->middleware('auth');
 Route::get('/places/delete/{building:id}', [PlaceController::class, 'delete'])->where('place', '[0-9]+')->middleware('auth');
 
+Route::get('/roads/list', [RoadController::class, 'list'])->middleware('auth');
+Route::get('/roads/add', [RoadController::class, 'addForm'])->middleware('auth');
+Route::post('/roads/add', [RoadController::class, 'add'])->middleware('auth');
+Route::get('/roads/edit/{road:id}', [RoadController::class, 'editForm'])->where('road', '[0-9]+')->middleware('auth');
+Route::post('/roads/edit/{road:id}', [RoadController::class, 'edit'])->where('road', '[0-9]+')->middleware('auth');
+Route::get('/roads/delete/{road:id}', [RoadController::class, 'delete'])->where('road', '[0-9]+')->middleware('auth');
+
 Route::get('/brains/list', [BrainController::class, 'list'])->middleware('auth');
 Route::get('/brains/add', [BrainController::class, 'addForm'])->middleware('auth');
 Route::post('/brains/add', [BrainController::class, 'add'])->middleware('auth');

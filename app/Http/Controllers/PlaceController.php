@@ -9,6 +9,7 @@ use Illuminate\Validation\Rule;
 
 use App\Models\Place;
 use App\Models\Building;
+use App\Models\Road;
 
 class PlaceController extends Controller
 {
@@ -26,6 +27,7 @@ class PlaceController extends Controller
 
         return view('places.add', [
             'buildings' => Building::all(),
+            'roads' => Road::all(),
         ]);
 
     }
@@ -41,6 +43,7 @@ class PlaceController extends Controller
             'width' => 'required|numeric|max:64',
             'height' => 'required|numeric|max:64',
             'building_id' => 'required',
+            'place_id' => 'required',
         ]);
 
         $place = new Place();
@@ -57,6 +60,7 @@ class PlaceController extends Controller
         return view('places.edit', [
             'place' => $place,
             'buildings' => Building::all(),
+            'roads' => Road::all(),
         ]);
 
     }
@@ -72,6 +76,7 @@ class PlaceController extends Controller
             'width' => 'required|numeric|max:64',
             'height' => 'required|numeric|max:64',
             'building_id' => 'required',
+            'place_id' => 'required',
         ]);
 
         $place->update($attributes);

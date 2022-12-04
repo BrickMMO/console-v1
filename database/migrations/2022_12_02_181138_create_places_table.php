@@ -5,6 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 use App\Models\Building;
+use App\Models\Road;
 
 class CreatePlacesTable extends Migration
 {
@@ -24,6 +25,7 @@ class CreatePlacesTable extends Migration
             $table->integer('width');
             $table->integer('height');
             $table->foreignIdFor(Building::class);
+            $table->foreignIdFor(Road::class);
             $table->timestamps();
         });
     }

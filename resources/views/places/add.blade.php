@@ -26,6 +26,8 @@
 
         @include ('layout.forms.select', ['name' => 'building_id', 'label' => 'Building', 'options' => $buildings, 'type' => 'table'])
 
+        @include ('layout.forms.select', ['name' => 'road_id', 'label' => 'Road', 'options' => $roads, 'type' => 'table'])
+
         @include ('layout.forms.button', ['label' => 'Add Place'])
 
     </form>
