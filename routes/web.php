@@ -8,6 +8,7 @@ use App\Http\Controllers\HubFunctionController;
 use App\Http\Controllers\HubPortController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\RoadController;
 use App\Http\Controllers\UserController;
 
 Use Illuminate\Support\Facades\Redirect;
