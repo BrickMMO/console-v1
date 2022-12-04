@@ -9,7 +9,13 @@
 
                 @foreach ($row as $j => $col)
 
-                    <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{(isset($building) and $building == $col->building_id) ? 'red' : $col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>
+                    @if (isset($bulding))
+                        <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$building == $col->building_id ? 'red' : $col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>
+                    @elseif (isset($road))
+                        <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$road == $col->road_id ? 'red' : $col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>
+                    @else
+                        <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>
+                    @endif
 
                 @endforeach
 

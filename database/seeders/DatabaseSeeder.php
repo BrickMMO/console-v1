@@ -109,7 +109,7 @@ class DatabaseSeeder extends Seeder
             ),
             array(
                 'title' => 'Aker Wood West',
-                'squares' => array(53,86,83,98,54,69,84,99),
+                'squares' => array(53,68,83,98,54,69,84,99),
             ),
             array(
                 'title' => '2nd Ave',

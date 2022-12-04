@@ -4,11 +4,11 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Manage Maps'])
+    @include ('layout.title', ['title' => 'Manage Roads'])
 
     <div>
         <div class="w3-twothird">
-            @include ('layout.breadcrumbs', ['title' => 'Manage Maps'])
+            @include ('layout.breadcrumbs', ['title' => 'Manage Roads'])
         </div>
         <div class="w3-third w3-right-align w3-small ">
         </div>
@@ -17,55 +17,35 @@
     <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
         <tr class="w3-dark-grey">
             <th class="ca-col-icon"></th>
-            <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
             <th>Title</th>
-            <th>Dimensions</th>
-            <th>Buildings</th>
-            <th>Brains</th>
-            <th>Squares</th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
             <th class="ca-col-icon"></th>
         </tr>
-        <?php foreach($maps as $map): ?>
+        <?php foreach($roads as $road): ?>
             <tr>
                 <td>
-                    {{$map->id}}
+                    {{$road->id}}
                 </td>
                 <td>
-                    <a href="/maps/view/{{$map->id}}"><i class="fas fa-map fa-2x" aria-hidden="true"></i></a>
+                    @include ('layout.maps.static', ['grid' => $road->grid(), 'road' => $road->id])
                 </td>
                 <td>
-                    @include ('layout.maps.static', ['grid' => $map->grid()])
+                    {{$road->title}}
                 </td>
                 <td>
-                    {{$map->title}}
-                </td>
-                <td>
-                    {{$map->width}} x {{$map->height}}
-                </td>
-                <td>
-                    {{$map->buildings()->count()}}
-                </td>
-                <td>
-                    {{$map->brains()->count()}}
-                </td>
-                <td>
-                    {{$map->squares()->count()}}
-                </td>
-                <td>
-                    <a href="/maps/types/{{$map->id}}">
+                    <a href="/roads/maps/{{$road->id}}">
                         <i class="fas fa-map"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/maps/edit/{{$map->id}}">
+                    <a href="/roads/edit/{{$road->id}}">
                         <i class="fas fa-edit"></i>
                     </a>
                 </td>
                 <td>
-                    <a href="/maps/delete/{{$map->id}}">
+                    <a href="/roads/delete/{{$road->id}}">
                         <i class="fas fa-trash-alt mute"></i>
                     </a>
                 </td>
@@ -73,7 +53,7 @@
         <?php endforeach; ?>
     </table>
 
-    @include ('layout.forms.button', ['label' => 'Add Map', 'href' => '/maps/add'])
+    @include ('layout.forms.button', ['label' => 'Add Road', 'href' => '/roads/add'])
     
 </section>
 
