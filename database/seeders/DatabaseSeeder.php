@@ -100,19 +100,19 @@ class DatabaseSeeder extends Seeder
                 'squares' => array(16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,32,33,34,35,36,37,38,39,40,41,42,43,44),
             ),
             array(
-                'title' => 'Second Horizontal',
+                'title' => '39th Street',
                 'squares' => array(107,108,109,110,111,112,113,114,115,116,117,118,119,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135),
             ),
             array(
-                'title' => 'First Vert',
+                'title' => 'Tatooine',
                 'squares' => array(31,46,61,76,91,106,47,62,77,92),
             ),
             array(
-                'title' => 'Acres Wood',
+                'title' => 'Aker Wood West',
                 'squares' => array(53,86,83,98,54,69,84,99),
             ),
             array(
-                'title' => '39th Street',
+                'title' => '2nd Ave',
                 'squares' => array(59,74,89,104,45,60,75,90,105,120),
             ),
         );
@@ -146,7 +146,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 1,
                 'image' => 'blotts.jpg',
                 'squares' => array(1,2),
-            ),array(
+            ),
+            array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Weasley\'s Wizard Wheezes & Knockturn Alley',
                 'set_num' => '75798',
@@ -155,7 +156,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 1,
                 'image' => 'wizard.jpg',
                 'squares' => array(3,4),
-            ),array(
+            ),
+            array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Quality Quidditch™ Supplies & The Daily Prophet™',
                 'set_num' => '75798',
@@ -164,7 +166,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 1,
                 'image' => 'quidditch.jpg',
                 'squares' => array(10,11),
-            ),array(
+            ),
+            array(
                 'title' => 'Dagobah™ Jedi™ Training Diorama',
                 'subtitle' => '',
                 'set_num' => '75330',
@@ -173,7 +176,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 1,
                 'image' => 'jedi.jpg',
                 'squares' => array(12,13),
-            ),array(
+            ),
+            array(
                 'title' => 'Diagon Alley',
                 'subtitle' => 'Ollivanders™ Wandshop & Scribbulus',
                 'set_num' => '75798',
@@ -182,7 +186,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 1,
                 'image' => 'wand.jpg',
                 'squares' => array(14,15),
-            ),array(
+            ),
+            array(
                 'title' => 'Boutique Hotel',
                 'subtitle' => '',
                 'set_num' => '10297',
@@ -190,7 +195,7 @@ class DatabaseSeeder extends Seeder
                 'width' => 2,
                 'height' => 2,
                 'image' => 'boutique.jpg',
-                'squares' => array(87,88,102,103),
+                'squares' => array(57,58,72,73),
             ),
             array(
                 'title' => 'The Pig House',
@@ -201,7 +206,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 2,
                 'image' => 'pig.jpg',
                 'squares' => array(85,100),
-            ),array(
+            ),
+            array(
                 'title' => 'Bookshop',
                 'subtitle' => 'Birch Books',
                 'set_num' => '10270',
@@ -210,7 +216,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 2,
                 'image' => 'birch.jpg',
                 'squares' => array(86,101),
-            ),array(
+            ),
+            array(
                 'title' => 'Bookshop',
                 'subtitle' => 'Townhouse',
                 'set_num' => '10270',
@@ -218,8 +225,9 @@ class DatabaseSeeder extends Seeder
                 'width' => 1,
                 'height' => 2,
                 'image' => 'townhouse.jpg',
-                'squares' => array(56,71),
-            ),array(
+                'squares' => array(87,102),
+            ),
+            array(
                 'title' => 'Winnie the Pooh',
                 'subtitle' => '',
                 'set_num' => '21326',
@@ -228,7 +236,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 2,
                 'image' => 'winnie.jpg',
                 'squares' => array(51,52,66,67),
-            ),array(
+            ),
+            array(
                 'title' => 'Police Station',
                 'subtitle' => '',
                 'set_num' => '10278',
@@ -237,7 +246,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 2,
                 'image' => 'police.jpg',
                 'squares' => array(49,50,64,65),
-            ),array(
+            ),
+            array(
                 'title' => 'Assembly Square',
                 'subtitle' => '',
                 'set_num' => '10255',
@@ -246,7 +256,8 @@ class DatabaseSeeder extends Seeder
                 'height' => 2,
                 'image' => 'square.jpg',
                 'squares' => array(79,80,81,94,95,96),
-            ),array(
+            ),
+            array(
                 'title' => 'Mos Eisley Cantina™',
                 'subtitle' => 'Tatooine Dwelling #2',
                 'set_num' => '75290',
@@ -254,7 +265,17 @@ class DatabaseSeeder extends Seeder
                 'width' => 1,
                 'height' => 2,
                 'image' => 'dwelling-2.png',
-                'squares' => array(55,70),
+                'squares' => array(48,63),
+            ),
+            array(
+                'title' => 'Daily Bugle',
+                'subtitle' => '',
+                'set_num' => '76178',
+                'color' => 'FE2419',
+                'width' => 2,
+                'height' => 2,
+                'image' => 'bugle.png',
+                'squares' => array(55,56,70,71),
             ),
         );
 
