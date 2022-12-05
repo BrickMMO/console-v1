@@ -14,6 +14,11 @@ class Road extends Model
         'map_id'
     ];
 
+    public function squares()
+    {
+        return $this->hasMany(MapSquare::class);
+    }
+
     public function map()
     {
         return $this->belongsTo(Map::class);

@@ -12,9 +12,9 @@
 
         @csrf
 
-        @include ('layout.maps.squares', ['grid' => $map->grid(), 'selected' => $building->squares->pluck('id')->toArray()])
+        @include ('layout.maps.squares', ['grid' => $map->grid(), 'selected' => $building->squares->pluck('id')->toArray(), 'color' => 'red'])
 
-        @include ('layout.forms.button', ['label' => 'Edit Bulding'])
+        @include ('layout.forms.button', ['label' => 'Edit Building'])
 
     </form>
 

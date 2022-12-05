@@ -9,7 +9,7 @@
 
                 @foreach ($row as $j => $col)
 
-                    @if (isset($bulding))
+                    @if (isset($building))
                         <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$building == $col->building_id ? 'red' : $col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>
                     @elseif (isset($road))
                         <td data-x="{{$j}}" data-y="{{$i}}" class="w3-{{$road == $col->road_id ? 'dark-grey' : $col->mapType->color}}" style="width:{{round(100/count($row),2)}}%;  height: 17px;"></td>

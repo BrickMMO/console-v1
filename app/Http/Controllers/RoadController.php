@@ -82,4 +82,38 @@ class RoadController extends Controller
         
     }
 
+    public function squaresForm(Road $road)
+    {
+
+        $map = Map::where('id', $road->map_id)->first();
+
+        return view('roads.squares', [
+            'road' => $road,
+            'map' => $map,
+        ]);
+
+    }
+
+    public function squares(Road $road, Request $request)
+    {
+
+        $squares = $request->input('square');
+
+        MapSquare::where('road_id', $road->id)->update(['road_id' => 0]);
+
+        foreach($request->squares as $key => $value)
+        {
+
+            if($value == 'on')
+            {
+                MapSquare::where('id', $key)->update(['road_id' => $road->id]);
+            }
+
+        }
+        
+        return redirect('/roads/list')
+            ->with('message', 'Road has been edited!');      
+
+    }
+
 }

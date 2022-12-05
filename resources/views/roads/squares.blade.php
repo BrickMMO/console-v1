@@ -4,17 +4,17 @@
 
 <section class="w3-padding ca-container-large">
 
-    @include ('layout.title', ['title' => 'Map Grid'])
+    @include ('layout.title', ['title' => 'Road Grid'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Maps' => '/maps/list'], 'title' => 'View Map: '.$map->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Roads' => '/roads/list'], 'title' => 'Road Grid: '.$road->title])
 
-    <form method="post" action="/maps/types/{{$map->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
+    <form method="post" action="/roads/squares/{{$road->id}}" novalidate class="w3-margin-bottom" autocomplete="off">
 
         @csrf
 
-        @include ('layout.maps.types', ['grid' => $map->grid(), 'types' => $types])
+        @include ('layout.maps.squares', ['grid' => $map->grid(), 'selected' => $road->squares->pluck('id')->toArray(), 'color' => 'dark-grey'])
 
-        @include ('layout.forms.button', ['label' => 'Edit Map'])
+        @include ('layout.forms.button', ['label' => 'Edit Road'])
 
     </form>
 

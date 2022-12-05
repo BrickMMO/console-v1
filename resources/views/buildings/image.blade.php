@@ -6,7 +6,7 @@
 
     @include ('layout.title', ['title' => 'Building Image'])
 
-    @include ('layout.breadcrumbs', ['links' => ['Manage Buldings' => '/buildings/list'], 'title' => 'Building Image: '.$building->title])
+    @include ('layout.breadcrumbs', ['links' => ['Manage Buildings' => '/buildings/list'], 'title' => 'Building Image: '.$building->title])
 
     @include ('layout.elements.image', ['image' => $building->image, 'width' => 400, 'id' => $building->id, 'type' => 'buildings'])
 

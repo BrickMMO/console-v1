@@ -35,7 +35,7 @@
                     {{$road->title}}
                 </td>
                 <td>
-                    <a href="/roads/maps/{{$road->id}}">
+                    <a href="/roads/squares/{{$road->id}}">
                         <i class="fas fa-map"></i>
                     </a>
                 </td>

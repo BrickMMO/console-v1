@@ -51,7 +51,7 @@ grid.forEach(function(row, i){
 
         if(square.querySelector("input").value == 'on')
         {
-            square.classList.add("w3-red");
+            square.classList.add("w3-{{$color}}");
         }
         
         square.addEventListener("click", function(e){
@@ -65,12 +65,12 @@ grid.forEach(function(row, i){
             if(e.target.querySelector("input").value == 'on')
             {
                 e.target.querySelector("input").value = 'off';
-                square.classList.remove("w3-red");
+                square.classList.remove("w3-{{$color}}");
             }
             else
             {
                 e.target.querySelector("input").value = 'on';
-                square.classList.add("w3-red");
+                square.classList.add("w3-{{$color}}");
             }
             
 

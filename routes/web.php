@@ -73,6 +73,8 @@ Route::post('/roads/add', [RoadController::class, 'add'])->middleware('auth');
 Route::get('/roads/edit/{road:id}', [RoadController::class, 'editForm'])->where('road', '[0-9]+')->middleware('auth');
 Route::post('/roads/edit/{road:id}', [RoadController::class, 'edit'])->where('road', '[0-9]+')->middleware('auth');
 Route::get('/roads/delete/{road:id}', [RoadController::class, 'delete'])->where('road', '[0-9]+')->middleware('auth');
+Route::get('/roads/squares/{road:id}', [RoadController::class, 'squaresForm'])->where('road', '[0-9]+')->middleware('auth');
+Route::post('/roads/squares/{road:id}', [RoadController::class, 'squares'])->where('road', '[0-9]+')->middleware('auth');
 
 Route::get('/brains/list', [BrainController::class, 'list'])->middleware('auth');
 Route::get('/brains/add', [BrainController::class, 'addForm'])->middleware('auth');
