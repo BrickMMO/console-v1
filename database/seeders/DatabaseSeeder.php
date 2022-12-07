@@ -590,6 +590,7 @@ class DatabaseSeeder extends Seeder
             $brain = new Brain();
             $brain->title = $value['title'];
             $brain->ip = $value['ip'];
+            $brain->key = $value['key'];
             $brain->hub_id = $value['hub_id'];
             $brain->map_id = $value['map_id'];
             $brain->save();

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Brain;
 use App\Models\Hub;
 
+use App\Http\Middleware\CheckApiKey;
+
 use Carbon\Carbon;
 
 /*
@@ -19,65 +21,68 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/device', function(Request $request) {
+Route::middleware([CheckApiKey::class])->group(function () {
 
-    $data = [
-        'ip' => $_SERVER['REMOTE_ADDR'],
-    ];
+    Route::get('/device', function(Request $request) {
 
-    return $data;
+        $data = [
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'key' => $request->get('key'),
+        ];
 
-});
+        return $data;
 
-Route::get('/brains', function (Request $request) {
+    });
 
-    $result['status'] = 'success';
-    $result['ip'] = $request->ip();
+    Route::get('/brains', function (Request $request) {
 
-    $result['data'] = Brain::all();
-
-    return $result;
-
-
-});
-
-Route::get('/whoami', function (Request $request) {
-
-    $brain = Brain::where('ip', $request->ip())->first();
-
-    $result['ip'] = $request->ip();
-
-    if ($brain) 
-    {
         $result['status'] = 'success';
-        $result['data'] = $brain;
-    }
-    else
-    {
-        $result['status'] = 'error';
-        $result['data'] = array();
-    }
+        $result['ip'] = $request->ip();
 
-    return $result;
+        $result['data'] = Brain::all();
 
-});
+        return $result;
 
-Route::get('/brain/{brain?}', function (Brain $brain, Request $request) {
+    });
 
-    $result['ip'] = $request->ip();
+    Route::get('/whoami', function (Request $request) {
 
-    $hub = Hub::where('id', $brain->hub_id)->first();
+        $brain = Brain::where('ip', $request->ip())->first();
 
-    $hub->hubPorts;
-    $brain->brainPorts;
+        $result['ip'] = $request->ip();
 
-    $result['status'] = 'success';
-    $result['data']['hub'] = $hub;
-    
-    $result['data']['brain'] = $brain;
-    
+        if ($brain) 
+        {
+            $result['status'] = 'success';
+            $result['data'] = $brain;
+        }
+        else
+        {
+            $result['status'] = 'error';
+            $result['data'] = array();
+        }
 
-    return $result;
+        return $result;
+
+    });
+
+    Route::get('/brain', function (Brain $brain, Request $request) {
+
+        $brain = $request->brain;
+
+        $hub = Hub::where('id', $brain->hub_id)->first();
+
+        $hub->hubPorts;
+        $brain->brainPorts;
+
+        $result['status'] = 'success';
+        $result['data']['hub'] = $hub;
+        
+        $result['data']['brain'] = $brain;
+
+        return $result;
+
+    });
 
 });
 

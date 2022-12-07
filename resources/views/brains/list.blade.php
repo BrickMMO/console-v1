@@ -56,7 +56,7 @@
                     </small>
                 </td>
                 <td>
-                    <strong>{{$brain->key}}</strong>
+                    <strong class="w3-dark-grey">{{$brain->key}}</strong>
                 </td>
                 <td>
                     {{$brain->hub->set_num}}
