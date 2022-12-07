@@ -21,46 +21,34 @@ use Carbon\Carbon;
 |
 */
 
+Route::get('/brains', function (Request $request) {
+
+    $result['status'] = 'Success';
+    $result['data'] = Brain::all();
+
+    return $result;
+
+});
+
 Route::middleware([CheckApiKey::class])->group(function () {
-
-    Route::get('/device', function(Request $request) {
-
-        $data = [
-            'ip' => $_SERVER['REMOTE_ADDR'],
-            'key' => $request->get('key'),
-        ];
-
-        return $data;
-
-    });
-
-    Route::get('/brains', function (Request $request) {
-
-        $result['status'] = 'success';
-        $result['ip'] = $request->ip();
-
-        $result['data'] = Brain::all();
-
-        return $result;
-
-    });
 
     Route::get('/whoami', function (Request $request) {
 
-        $brain = Brain::where('ip', $request->ip())->first();
+        $result['status'] = 'Success';
+        $result['data'] = $request->brain;    
 
-        $result['ip'] = $request->ip();
+        return $result;
+    
+    });
 
-        if ($brain) 
-        {
-            $result['status'] = 'success';
-            $result['data'] = $brain;
-        }
-        else
-        {
-            $result['status'] = 'error';
-            $result['data'] = array();
-        }
+    Route::get('/device', function(Request $request) {
+
+        $result['status'] = 'Success';
+        $result['data'] = [
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'key' => $request->get('key'),
+            'id' => $request->brain->id,
+        ];
 
         return $result;
 
@@ -69,15 +57,13 @@ Route::middleware([CheckApiKey::class])->group(function () {
     Route::get('/brain', function (Brain $brain, Request $request) {
 
         $brain = $request->brain;
-
-        $hub = Hub::where('id', $brain->hub_id)->first();
-
-        $hub->hubPorts;
         $brain->brainPorts;
 
-        $result['status'] = 'success';
+        $hub = Hub::where('id', $brain->hub_id)->first();
+        $hub->hubPorts;
+
+        $result['status'] = 'Success';
         $result['data']['hub'] = $hub;
-        
         $result['data']['brain'] = $brain;
 
         return $result;
