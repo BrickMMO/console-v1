@@ -19,6 +19,16 @@ use Carbon\Carbon;
 |
 */
 
+Route::get('/device', function(Request $request) {
+
+    $data = [
+        'ip' => $_SERVER['REMOTE_ADDR'],
+    ];
+
+    return $data;
+
+});
+
 Route::get('/brains', function (Request $request) {
 
     $result['status'] = 'success';
