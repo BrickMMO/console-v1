@@ -23,6 +23,7 @@
             <th class="ca-col-icon"></th>
             <th class="ca-col-image"></th>
             <th>Title</th>
+            <th>Key</th>
             <th>Set</th>
             <th>Part</th>
             <th class="ca-col-icon"></th>
@@ -53,6 +54,9 @@
                         <br>
                         IP Address: {{$brain->ip}}
                     </small>
+                </td>
+                <td>
+                    <strong>{{$brain->key}}</strong>
                 </td>
                 <td>
                     {{$brain->hub->set_num}}
