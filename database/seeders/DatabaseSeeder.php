@@ -484,6 +484,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Mike',
                 'ip' => '10.12.1.13',
+                'key' => 'MIKE',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -500,6 +501,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'November',
                 'ip' => '10.12.1.14',
+                'key' => 'NOVEMBER',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -516,6 +518,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Oscar',
                 'ip' => '10.12.1.15',
+                'key' => 'OSCAR',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -532,6 +535,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Papa',
                 'ip' => '10.12.1.16',
+                'key' => 'PAPA',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -548,6 +552,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Quebec',
                 'ip' => '10.12.1.17',
+                'key' => 'QUEBEC',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
@@ -564,6 +569,7 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Romeo',
                 'ip' => '10.12.1.18',
+                'key' => 'ROMEO',
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(

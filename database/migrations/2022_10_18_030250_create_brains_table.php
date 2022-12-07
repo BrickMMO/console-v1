@@ -20,6 +20,7 @@ class CreateBrainsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('ip')->nullable();
+            $table->string('key');
             $table->foreignIdFor(Hub::class);
             $table->foreignIdFor(Map::class);
             $table->timestamps();
