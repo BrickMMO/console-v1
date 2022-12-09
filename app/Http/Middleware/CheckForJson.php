@@ -21,13 +21,14 @@ class CheckForJson
 
         $response = $next($request);
 
-        $data = json_decode($response->content(), true);
+        $data = $response->content();
 
-        if(!is_array($data))
+        if(Str::isJson($data))
         {
             return $response;
         }
 
+        $data = json_decode($data, true);
         $data = $this->checkForJson($data);
 
         return response()->json($data);
@@ -42,7 +43,7 @@ class CheckForJson
             {
                 $data[$key] = $this->checkForJson($value);
             }
-            elseif (is_string($value) and json_decode($value))
+            elseif (Str::isJson($value)) // (is_string($value) and json_decode($value))
             {
                 $data[$key] = json_decode($value, true);
             }
