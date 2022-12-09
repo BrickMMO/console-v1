@@ -23,7 +23,7 @@ class CheckForJson
 
         $data = $response->content();
 
-        if(Str::isJson($data))
+        if(!Str::isJson($data))
         {
             return $response;
         }
@@ -39,11 +39,12 @@ class CheckForJson
 
         foreach($data as $key => $value)
         {
+            
             if (is_array($value))
             {
                 $data[$key] = $this->checkForJson($value);
             }
-            elseif (Str::isJson($value)) // (is_string($value) and json_decode($value))
+            elseif (Str::isJson($value))
             {
                 $data[$key] = json_decode($value, true);
             }
