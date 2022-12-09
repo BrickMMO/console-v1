@@ -462,13 +462,16 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Christmas Tree',
             ),
             array(
-                'title' => 'In finity Gauntlet',
+                'title' => 'Infinity Gauntlet',
             ),
             array(
                 'title' => 'Loop Coaster',
             ),
             array(
                 'title' => 'Magestic Tiger',
+            ),
+            array(
+                'title' => 'Color Sensor',
             ),
         );
 
