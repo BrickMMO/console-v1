@@ -7,6 +7,7 @@ use App\Models\Brain;
 use App\Models\Hub;
 
 use App\Http\Middleware\CheckApiKey;
+use App\Http\Middleware\CheckForJson;
 
 use Carbon\Carbon;
 
@@ -30,7 +31,7 @@ Route::get('/brains', function (Request $request) {
 
 });
 
-Route::middleware([CheckApiKey::class])->group(function () {
+Route::middleware([CheckApiKey::class,CheckForJson::class])->group(function () {
 
     Route::get('/whoami', function (Request $request) {
 
