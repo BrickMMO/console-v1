@@ -73,13 +73,13 @@ Route::middleware([CheckApiKey::class,CheckForJson::class])->group(function () {
     });
 
 
-    Route::get('/port/{brainPort?}/json/{json}', function(Request $request, BrainPort $brainPort, $json) {
+    Route::get('/port/{brainPort?}/json/{json}', function(Request $request, BrainPort $brainPort, json) {
+
+        $brainPort->json = $json;
+        $brainPort->update();
 
         $result['status'] = 'Success';
-        $result['data'] = [
-            'ip' => $_SERVER['REMOTE_ADDR'],
-            'key' => $request->get('key'),
-        ];
+        $result['data']['brainPort'] = $brainPort;
 
         return $result;
 
