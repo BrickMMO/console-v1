@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Models\Brain;
+use App\Models\BrainPort;
 use App\Models\Hub;
 
 use App\Http\Middleware\CheckApiKey;
@@ -22,7 +23,7 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/brains', function (Request $request) {
+Route::get('/brains', function () {
 
     $result['status'] = 'Success';
     $result['data'] = Brain::all();
@@ -55,7 +56,7 @@ Route::middleware([CheckApiKey::class,CheckForJson::class])->group(function () {
 
     });
 
-    Route::get('/brain', function (Brain $brain, Request $request) {
+    Route::get('/brain', function (Request $request) {
 
         $brain = $request->brain;
         $brain->brainPorts;
@@ -66,6 +67,19 @@ Route::middleware([CheckApiKey::class,CheckForJson::class])->group(function () {
         $result['status'] = 'Success';
         $result['data']['hub'] = $hub;
         $result['data']['brain'] = $brain;
+
+        return $result;
+
+    });
+
+
+    Route::get('/port/{brainPort?}/json/{json}', function(Request $request, BrainPort $brainPort, $json) {
+
+        $result['status'] = 'Success';
+        $result['data'] = [
+            'ip' => $_SERVER['REMOTE_ADDR'],
+            'key' => $request->get('key'),
+        ];
 
         return $result;
 

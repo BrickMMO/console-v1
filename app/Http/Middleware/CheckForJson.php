@@ -22,6 +22,12 @@ class CheckForJson
         $response = $next($request);
 
         $data = json_decode($response->content(), true);
+
+        if(!is_array($data))
+        {
+            return $response;
+        }
+
         $data = $this->checkForJson($data);
 
         return response()->json($data);
