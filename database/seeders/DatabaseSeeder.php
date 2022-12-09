@@ -491,7 +491,7 @@ class DatabaseSeeder extends Seeder
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
-                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '{"buildings" : [1]}', 'settings' => '{"status" : "on"}'),
+                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
@@ -525,11 +525,11 @@ class DatabaseSeeder extends Seeder
                 'hub_id' => 1,
                 'map_id' => 1,
                 'ports' => array(
-                    array('hub_port_id' => '1', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '1', 'hub_function_id' => 1, 'json' => '{"buildings":[1]}', 'settings' => '{"status" : "on"}'),
                     array('hub_port_id' => '2', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '3', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '4', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
-                    array('hub_port_id' => '5', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
+                    array('hub_port_id' => '5', 'hub_function_id' => 9, 'json' => '', 'settings' => '{"status":"on","color":"None","ambient":"0","reflection":"0"}'),
                     array('hub_port_id' => '6', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '7', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
                     array('hub_port_id' => '8', 'hub_function_id' => null, 'json' => '', 'settings' => ''),
