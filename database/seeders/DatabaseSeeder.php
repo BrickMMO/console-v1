@@ -225,7 +225,7 @@ class DatabaseSeeder extends Seeder
                 'width' => 1,
                 'height' => 2,
                 'image' => 'townhouse.jpg',
-                'squares' => array(87,102),
+                'squares' => array(56,71),
             ),
             array(
                 'title' => 'Winnie the Pooh',
@@ -275,7 +275,17 @@ class DatabaseSeeder extends Seeder
                 'width' => 2,
                 'height' => 2,
                 'image' => 'bugle.png',
-                'squares' => array(55,56,70,71),
+                'squares' => array(87,88,102,103),
+            ),
+            array(
+                'title' => 'Christmas Tree',
+                'subtitle' => '',
+                'set_num' => '40573',
+                'color' => '008B31',
+                'width' => 1,
+                'height' => 2,
+                'image' => 'christmas.jpg',
+                'squares' => array(82,97),
             ),
         );
 
@@ -472,6 +482,9 @@ class DatabaseSeeder extends Seeder
             ),
             array(
                 'title' => 'Color Sensor',
+            ),
+            array(
+                'title' => 'Christmas Tree',
             ),
         );
 
