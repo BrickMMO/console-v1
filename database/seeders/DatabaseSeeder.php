@@ -483,9 +483,6 @@ class DatabaseSeeder extends Seeder
             array(
                 'title' => 'Color Sensor',
             ),
-            array(
-                'title' => 'Christmas Tree',
-            ),
         );
 
         foreach($functions as $key => $value)
