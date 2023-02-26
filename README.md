@@ -1,4 +1,4 @@
-# The Laravel CMS for codeadam.ca
+# BrickMMO Laravel CMS
 
 This repository is a simple PHP CMS using Laravel used tp manage my personal portfolio.
 
