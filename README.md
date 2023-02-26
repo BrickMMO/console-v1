@@ -2,12 +2,11 @@
 
 This repository is a simple PHP CMS using Laravel used tp manage my personal portfolio.
 
-## Tutorial Requirements:
+## Requirements:
 
-* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
-* [Filezilla](https://filezilla-project.org/) (or any FTP program)
+* [BrickMMO](https://www.brickmmo.com/)
 * [Laravel](https://laravel.com/)
 
-<a href="https://codeadam.ca">
-<img src="https://codeadam.ca/images/code-block.png" width="100">
+<a href="https://brickmmo.com">
+<img src="https://brickmmo.com/images/brickmmo-logo-horizontal.jpg" width="300">
 </a>
