@@ -1,8 +1,10 @@
 # BrickMMO Laravel CMS
 
-This repository is a simple PHP CMS using Laravel used tp manage my personal portfolio.
+This repository is a simple PHP CMS using Laravel used to manage the BrickMMO LEGO® City.
 
-## Requirements:
+***
+
+## Repository Resources
 
 * [BrickMMO](https://www.brickmmo.com/)
 * [Laravel](https://laravel.com/)
