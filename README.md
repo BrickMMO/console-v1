@@ -4,7 +4,7 @@ This repository is a simple PHP CMS using Laravel used to manage the BrickMMO Sm
 
 ***
 
-## Repository Resources
+## Repo Resources
 
 * [BrickMMO](https://www.brickmmo.com/)
 * [Laravel](https://laravel.com/)
